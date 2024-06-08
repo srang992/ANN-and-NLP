@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2D2D2D" />
+  
+  <title>Natural Language Processing and Artificial Neural Networks :: Natural Language Processing:</title>
+  
+
+  <link rel="icon" type="image/png" sizes="32x32" href="_static/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="_static/img/favicon-16x16.png">
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+
+  <link rel="stylesheet" href="_static/css/insegel.css"/>
+
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'',
+        VERSION:'2021.02',
+        LANGUAGE:'None',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+    };
+  </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/mathjax/tex-chtml.js"></script>
+
+  <script src="https://email.tl.fortawesome.com/c/eJxNjUEOgyAQAF8jR7Kw6wIHDh7sP1Cw2mgxgmn6-3JsMqc5zEQfE8dkxOY1KKMUOI3ACFKRJpSW2AAp7ontYIaxI6i7XPJVwyeVfCQ550Os3jLrGSNOLgbdAy6s0PBk2TFNjEbsfq31LB0OnX407pJa5v2faRadwSW63mn5KuLyR9j2tgx3zecanl-55R_-jjPs"></script>
+
+</head>
+
+<body>
+  <div id="insegel-container">
+    <header>
+      <div id="logo-container">
+          
+          <a href="#"><img src="_static/img/logo.svg"></a>
+          
+
+      </div>
+      <div id="project-container">
+        <h1>Natural Language Processing and Artificial Neural Networks Documentation</h1>
+      </div>
+    </header>
+
+    <div id="content-container">
+
+      <div id="main-content-container">
+        <div id="main-content-header">
+          <h1>Natural Language Processing:</h1>
+        </div>
+        <div id="main-content">
+          
+  <div class="section" id="natural-language-processing">
+<h1>Natural Language Processing:<a class="headerlink" href="#natural-language-processing" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/NLP%20Introduction.html"><em>What is NLP?</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/NLP%20Introduction.html#history-of-nlp"><em>History of NLP</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Components%20of%20NLP.html"><em>Components of NLP</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/Components%20of%20NLP.html#natural-language-understanding-nlu"><em>1. Natural Language Understanding (NLU)</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Components%20of%20NLP.html#natural-language-generation-nlg"><em>2. Natural Language Generation (NLG)</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Phases%20of%20NLP.html"><em>Phases of NLP</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/Phases%20of%20NLP.html#lexical-analysis-and-morphological"><em>1. Lexical Analysis and Morphological</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Phases%20of%20NLP.html#syntactic-analysis-parsing"><em>2. Syntactic Analysis (Parsing)</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Phases%20of%20NLP.html#semantic-analysis"><em>3. Semantic Analysis</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Phases%20of%20NLP.html#discourse-integration"><em>4. Discourse Integration</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Phases%20of%20NLP.html#pragmatic-analysis"><em>5. Pragmatic Analysis</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Ambiguity.html"><em>Ambiguity</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Linguistic%20Resources.html"><em>Corpus</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/Linguistic%20Resources.html#elements-of-corpus-design"><em>Elements of Corpus Design</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Linguistic%20Resources.html#corpus-balance"><em>Corpus Balance</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Linguistic%20Resources.html#sampling"><em>Sampling</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Linguistic%20Resources.html#corpus-size"><em>Corpus Size</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Linguistic%20Resources.html#treebank-corpus"><em>TreeBank Corpus</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Linguistic%20Resources.html#types-of-treebank-corpus"><em>Types of TreeBank Corpus</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Linguistic%20Resources.html#applications-of-treebank-corpus"><em>Applications of TreeBank Corpus</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Linguistic%20Resources.html#propbank-corpus"><em>PropBank Corpus</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Linguistic%20Resources.html#verbnet-vn"><em>VerbNet(VN)</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Linguistic%20Resources.html#wordnet"><em>WordNet</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Automata%20Theory.html"><em>Automata – What is it?</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/Automata%20Theory.html#formal-definition-of-a-finite-automaton"><em>Formal definition of a Finite Automaton</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Regular%20Expressions.html"><em>Regular Expressions</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/Regular%20Expressions.html#properties-of-regular-expressions"><em>Properties of Regular Expressions</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Regular%20Expressions.html#examples-of-regular-expressions"><em>Examples of Regular Expressions</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Regular%20Expressions.html#regular-sets-their-properties"><em>Regular Sets &amp; Their Properties</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Regular%20Expressions.html#properties-of-regular-sets"><em>Properties of regular sets</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Finite%20State%20Automata.html"><em>Finite State Automata</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/Finite%20State%20Automata.html#relation-between-finite-automata-regular-grammars-and-regular-expressions"><em>Relation between Finite Automata, Regular Grammars and Regular Expressions</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Finite%20State%20Automata.html#types-of-finite-state-automation-fsa"><em>Types of Finite State Automation (FSA)</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Finite%20State%20Automata.html#deterministic-finite-automation-dfa"><em>Deterministic Finite automation (DFA)</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Finite%20State%20Automata.html#non-deterministic-finite-automation-ndfa"><em>Non-deterministic Finite Automation (NDFA)</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Morphology.html"><em>What is Morphology</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Finite%20State%20Transducer.html"><em>Finite State Transducer</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/Finite%20State%20Transducer.html#formal-construction"><em>Formal Construction</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/N-gram.html"><em>An Introduction to N-gram</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Smoothing.html"><em>Smoothing</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/Smoothing.html#why-smoothing-techniques"><em>Why Smoothing Techniques?</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Morphological%20Parsing.html"><em>Morphological Parsing</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/Morphological%20Parsing.html#types-of-morphemes"><em>Types of Morphemes</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Morphological%20Parsing.html#word-order"><em>Word Order</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Morphological%20Parsing.html#lexicon"><em>Lexicon</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Morphological%20Parsing.html#morphotactics"><em>Morphotactics</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Morphological%20Parsing.html#orthographic-rules"><em>Orthographic rules</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/POS%20Tagging.html"><em>Part of Speech(PoS) Tagging</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/POS%20Tagging.html#stochastic-pos-tagging"><em>Stochastic POS Tagging</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/POS%20Tagging.html#properties-of-stochastic-post-tagging"><em>Properties of Stochastic POST Tagging</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/POS%20Tagging.html#hidden-markov-model"><em>Hidden Markov Model</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/POS%20Tagging.html#use-of-hmm-for-pos-tagging"><em>Use of HMM for POS Tagging</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/POS%20Tagging.html#first-assumption"><em>First Assumption</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/POS%20Tagging.html#second-assumption"><em>Second Assumption</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Semantics.html"><em>Semantic Analysis</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/Semantics.html#elements-of-semantic-analysis"><em>Elements of Semantic Analysis</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Semantics.html#difference-between-polysemy-and-homonymy"><em>Difference between Polysemy and Homonymy</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Semantics.html#meaning-representation"><em>Meaning Representation</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Semantics.html#lexical-semantics"><em>Lexical Semantics</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Word%20Sense%20Disambiguation.html"><em>Word Sense Disambiguation</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/Word%20Sense%20Disambiguation.html#evaluation-of-wsd"><em>Evaluation of WSD</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Word%20Sense%20Disambiguation.html#approaches-and-methods-to-word-sense-disambiguation-wsd"><em>Approaches and Methods to Word Sense Disambiguation (WSD)</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Word%20Sense%20Disambiguation.html#applications-of-word-sense-disambiguation-wsd"><em>Applications of Word Sense Disambiguation (WSD)</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Word%20Sense%20Disambiguation.html#difficulties-in-word-sense-disambiguation-wsd"><em>Difficulties in Word Sense Disambiguation (WSD)</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Discourse%20Processing.html"><em>Discourse Processing</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/Discourse%20Processing.html#concept-of-coherence"><em>Concept of Coherence</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Discourse%20Processing.html#discourse-structure"><em>Discourse structure</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Discourse%20Processing.html#algorithms-for-discourse-segmentation"><em>Algorithms for Discourse Segmentation</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Discourse%20Processing.html#text-coherence"><em>Text Coherence</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Discourse%20Processing.html#building-hierarchical-discourse-structure"><em>Building Hierarchical Discourse Structure</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Discourse%20Processing.html#reference-resolution"><em>Reference Resolution</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Discourse%20Processing.html#terminology-used-in-reference-resolution"><em>Terminology Used in Reference Resolution</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Discourse%20Processing.html#types-of-referring-expressions"><em>Types of Referring Expressions</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Discourse%20Processing.html#reference-resolution-tasks"><em>Reference Resolution Tasks</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Inception.html"><em>Natural Language Inception</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/Inception.html#natural-language-grammar"><em>Natural Language Grammar</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Inception.html#components-of-language"><em>Components of Language</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Inception.html#grammatical-categories"><em>Grammatical Categories</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Inception.html#spoken-language-syntax"><em>Spoken Language Syntax</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Information%20Retrieval.html"><em>Information Retrieval</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/Information%20Retrieval.html#classical-problem-in-information-retrieval-ir-system"><em>Classical Problem in Information Retrieval (IR) System</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Information%20Retrieval.html#aspects-of-ad-hoc-retrieval"><em>Aspects of Ad-hoc Retrieval</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Information%20Retrieval.html#information-retrieval-ir-model"><em>Information Retrieval (IR) Model</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Information%20Retrieval.html#types-of-information-retrieval-ir-model"><em>Types of Information Retrieval (IR) Model</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Information%20Retrieval.html#design-features-of-information-retrieval-ir-systems"><em>Design features of Information retrieval (IR) systems</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Information%20Retrieval.html#the-boolean-model"><em>The Boolean Model</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Information%20Retrieval.html#advantages-of-the-boolean-mode"><em>Advantages of the Boolean Mode</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Information%20Retrieval.html#disadvantages-of-the-boolean-model"><em>Disadvantages of the Boolean Model</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Information%20Retrieval.html#vector-space-model"><em>Vector Space Model</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Information%20Retrieval.html#cosine-similarity-measure-formula"><em>Cosine Similarity Measure Formula</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Information%20Retrieval.html#vector-space-representation-with-query-and-document"><em>Vector Space Representation with Query and Document</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Information%20Retrieval.html#term-weighting"><em>Term Weighting</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Information%20Retrieval.html#forms-of-document-frequency-weighting"><em>Forms of Document Frequency Weighting</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/Information%20Retrieval.html#user-query-improvement"><em>User Query Improvement</em></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+        </div>
+      </div>
+
+      <div id="side-menu-container">
+
+        <div id="search" role="search">
+        <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+            <input type="text" name="q" placeholder="Search..." />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+        </form>
+</div>
+
+        <div id="side-menu" role="navigation">
+
+          
+  
+    
+  
+  
+    <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/NLP%20Introduction.html"><em>What is NLP?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Components%20of%20NLP.html"><em>Components of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Phases%20of%20NLP.html"><em>Phases of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Ambiguity.html"><em>Ambiguity</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Linguistic%20Resources.html"><em>Corpus</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Automata%20Theory.html"><em>Automata – What is it?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Regular%20Expressions.html"><em>Regular Expressions</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Finite%20State%20Automata.html"><em>Finite State Automata</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Morphology.html"><em>What is Morphology</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Finite%20State%20Transducer.html"><em>Finite State Transducer</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/N-gram.html"><em>An Introduction to N-gram</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Smoothing.html"><em>Smoothing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Morphological%20Parsing.html"><em>Morphological Parsing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/POS%20Tagging.html"><em>Part of Speech(PoS) Tagging</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Semantics.html"><em>Semantic Analysis</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Word%20Sense%20Disambiguation.html"><em>Word Sense Disambiguation</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Discourse%20Processing.html"><em>Discourse Processing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Inception.html"><em>Natural Language Inception</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Information%20Retrieval.html"><em>Information Retrieval</em></a></li>
+</ul>
+
+  
+
+
+        </div>
+
+        
+
+      </div>
+
+    </div>
+
+<footer>
+    <div id="footer-info">
+        <ul id="build-details">
+            
+                <li class="footer-element">
+                    
+                        <a href="_sources/index.rst.txt" rel="nofollow"> source</a>
+                    
+                </li>
+            
+
+            
+
+            
+        </ul>
+        <div id="credit">
+            created with <a href="http://sphinx-doc.org/">Sphinx</a> and <a href="https://github.com/Autophagy/insegel">Insegel</a>
+
+        </div>
+    </div>
+
+    <a id="menu-toggle" class="fa fa-bars" aria-hidden="true"></a>
+
+    <script type="text/javascript">
+      $("#menu-toggle").click(function() {
+        $("#menu-toggle").toggleClass("toggled");
+        $("#side-menu-container").slideToggle(300);
+      });
+    </script>
+
+</footer> 
+
+</div>
+
+</body>
+</html>

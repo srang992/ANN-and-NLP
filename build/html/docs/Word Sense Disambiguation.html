@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2D2D2D" />
+  
+  <title>Natural Language Processing and Artificial Neural Networks :: Word Sense Disambiguation</title>
+  
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../_static/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../_static/img/favicon-16x16.png">
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+
+  <link rel="stylesheet" href="../_static/css/insegel.css"/>
+
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'',
+        VERSION:'2021.02',
+        LANGUAGE:'None',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+    };
+  </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/mathjax/tex-chtml.js"></script>
+
+  <script src="https://email.tl.fortawesome.com/c/eJxNjUEOgyAQAF8jR7Kw6wIHDh7sP1Cw2mgxgmn6-3JsMqc5zEQfE8dkxOY1KKMUOI3ACFKRJpSW2AAp7ontYIaxI6i7XPJVwyeVfCQ550Os3jLrGSNOLgbdAy6s0PBk2TFNjEbsfq31LB0OnX407pJa5v2faRadwSW63mn5KuLyR9j2tgx3zecanl-55R_-jjPs"></script>
+
+</head>
+
+<body>
+  <div id="insegel-container">
+    <header>
+      <div id="logo-container">
+          
+          <a href="../index.html"><img src="../_static/img/logo.svg"></a>
+          
+
+      </div>
+      <div id="project-container">
+        <h1>Natural Language Processing and Artificial Neural Networks Documentation</h1>
+      </div>
+    </header>
+
+    <div id="content-container">
+
+      <div id="main-content-container">
+        <div id="main-content-header">
+          <h1><em>Word Sense Disambiguation</em></h1>
+        </div>
+        <div id="main-content">
+          
+  <div class="section" id="word-sense-disambiguation">
+<h1><em>Word Sense Disambiguation</em><a class="headerlink" href="#word-sense-disambiguation" title="Permalink to this headline">¶</a></h1>
+<p>We understand that words have different meanings based on the context of its usage in the sentence. If we talk about human languages, then they are ambiguous too because many words can be interpreted in multiple ways depending upon the context of their occurrence.</p>
+<p>Word sense disambiguation, in natural language processing (NLP), may be defined as the ability to determine which meaning of word is activated by the use of word in a particular context. Lexical ambiguity, syntactic or semantic, is one of the very first problem that any NLP system faces. Part-of-speech (POS) taggers with high level of accuracy can solve Word’s syntactic ambiguity. On the other hand, the problem of resolving semantic ambiguity is called WSD (word sense disambiguation). Resolving semantic ambiguity is harder than resolving syntactic ambiguity.</p>
+<p>For example, consider the two examples of the distinct sense that exist for the word “bass” −</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">can</span> <span class="pre">hear</span> <span class="pre">bass</span> <span class="pre">sound.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">He</span> <span class="pre">likes</span> <span class="pre">to</span> <span class="pre">eat</span> <span class="pre">grilled</span> <span class="pre">bass.</span></code></p></li>
+</ul>
+<p>The occurrence of the word bass clearly denotes the distinct meaning. In first sentence, it means <strong>frequency</strong> and in second, it means <strong>fish</strong>. Hence, if it would be disambiguated by WSD then the correct meaning to the above sentences can be assigned as follows −</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">can</span> <span class="pre">hear</span> <span class="pre">bass/frequency</span> <span class="pre">sound.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">He</span> <span class="pre">likes</span> <span class="pre">to</span> <span class="pre">eat</span> <span class="pre">grilled</span> <span class="pre">bass/fish.</span></code></p></li>
+</ul>
+<div class="section" id="evaluation-of-wsd">
+<h2><em>Evaluation of WSD</em><a class="headerlink" href="#evaluation-of-wsd" title="Permalink to this headline">¶</a></h2>
+<p>The evaluation of WSD requires the following two inputs −</p>
+<ul class="simple">
+<li><p><strong>A Dictionary</strong></p></li>
+</ul>
+<p>The very first input for evaluation of WSD is dictionary, which is used to specify the senses to be disambiguated.</p>
+<ul class="simple">
+<li><p><strong>Test Corpus</strong></p></li>
+</ul>
+<p>Another input required by WSD is the high-annotated test corpus that has the target or correct-senses. The test corpora can be of two types &amp;minsu;</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><strong>Lexical sample</strong> − This kind of corpora is used in the system, where it is required to disambiguate a small sample of words.</p></li>
+<li><p><strong>All-words</strong> − This kind of corpora is used in the system, where it is expected to disambiguate all the words in a piece of running text.</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="approaches-and-methods-to-word-sense-disambiguation-wsd">
+<h2><em>Approaches and Methods to Word Sense Disambiguation (WSD)</em><a class="headerlink" href="#approaches-and-methods-to-word-sense-disambiguation-wsd" title="Permalink to this headline">¶</a></h2>
+<p>Approaches and methods to WSD are classified according to the source of knowledge used in word disambiguation.</p>
+<p>Let us now see the four conventional methods to WSD −</p>
+<ol class="arabic simple">
+<li><p><strong>Dictionary-based or Knowledge-based Methods</strong></p></li>
+</ol>
+<p>As the name suggests, for disambiguation, these methods primarily rely on dictionaries, treasures and lexical knowledge base. They do not use corpora evidences for disambiguation. The Lesk method is the seminal dictionary-based method introduced by Michael Lesk in 1986. The Lesk definition, on which the Lesk algorithm is based is “measure overlap between sense definitions for all words in context”. However, in 2000, Kilgarriff and Rosensweig gave the simplified Lesk definition as “measure overlap between sense definitions of word and current context”, which further means identify the correct sense for one word at a time. Here the current context is the set of words in surrounding sentence or paragraph.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Supervised Methods</strong></p></li>
+</ol>
+<p>For disambiguation, machine learning methods make use of sense-annotated corpora to train. These methods assume that the context can provide enough evidence on its own to disambiguate the sense. In these methods, the words knowledge and reasoning are deemed unnecessary. The context is represented as a set of “features” of the words. It includes the information about the surrounding words also. Support vector machine and memory-based learning are the most successful supervised learning approaches to WSD. These methods rely on substantial amount of manually sense-tagged corpora, which is very expensive to create.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Semi-supervised Methods</strong></p></li>
+</ol>
+<p>Due to the lack of training corpus, most of the word sense disambiguation algorithms use semi-supervised learning methods. It is because semi-supervised methods use both labelled as well as unlabeled data. These methods require very small amount of annotated text and large amount of plain unannotated text. The technique that is used by semisupervised methods is bootstrapping from seed data.</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Unsupervised Methods</strong></p></li>
+</ol>
+<p>These methods assume that similar senses occur in similar context. That is why the senses can be induced from text by clustering word occurrences by using some measure of similarity of the context. This task is called word sense induction or discrimination. Unsupervised methods have great potential to overcome the knowledge acquisition bottleneck due to non-dependency on manual efforts.</p>
+</div>
+<div class="section" id="applications-of-word-sense-disambiguation-wsd">
+<h2><em>Applications of Word Sense Disambiguation (WSD)</em><a class="headerlink" href="#applications-of-word-sense-disambiguation-wsd" title="Permalink to this headline">¶</a></h2>
+<p>Word sense disambiguation (WSD) is applied in almost every application of language technology.</p>
+<p>Let us now see the scope of WSD −</p>
+<ol class="arabic simple">
+<li><p><strong>Machine Translation</strong></p></li>
+</ol>
+<p>Machine translation or MT is the most obvious application of WSD. In MT, Lexical choice for the words that have distinct translations for different senses, is done by WSD. The senses in MT are represented as words in the target language. Most of the machine translation systems do not use explicit WSD module.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Information Retrieval (IR)</strong></p></li>
+</ol>
+<p>Information retrieval (IR) may be defined as a software program that deals with the organization, storage, retrieval and evaluation of information from document repositories particularly textual information. The system basically assists users in finding the information they required but it does not explicitly return the answers of the questions. WSD is used to resolve the ambiguities of the queries provided to IR system. As like MT, current IR systems do not explicitly use WSD module and they rely on the concept that user would type enough context in the query to only retrieve relevant documents.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Text Mining and Information Extraction (IE)</strong></p></li>
+</ol>
+<p>In most of the applications, WSD is necessary to do accurate analysis of text. For example, WSD helps intelligent gathering system to do flagging of the correct words. For example, medical intelligent system might need flagging of “illegal drugs” rather than “medical drugs”</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Lexicography</strong></p></li>
+</ol>
+<p>WSD and lexicography can work together in loop because modern lexicography is corpusbased. With lexicography, WSD provides rough empirical sense groupings as well as statistically significant contextual indicators of sense.</p>
+</div>
+<div class="section" id="difficulties-in-word-sense-disambiguation-wsd">
+<h2><em>Difficulties in Word Sense Disambiguation (WSD)</em><a class="headerlink" href="#difficulties-in-word-sense-disambiguation-wsd" title="Permalink to this headline">¶</a></h2>
+<p>Followings are some difficulties faced by word sense disambiguation (WSD) −</p>
+<ol class="arabic simple">
+<li><p><strong>Differences between dictionaries</strong></p></li>
+</ol>
+<p>The major problem of WSD is to decide the sense of the word because different senses can be very closely related. Even different dictionaries and thesauruses can provide different divisions of words into senses.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Different algorithms for different applications</strong></p></li>
+</ol>
+<p>Another problem of WSD is that completely different algorithm might be needed for different applications. For example, in machine translation, it takes the form of target word selection; and in information retrieval, a sense inventory is not required.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Inter-judge variance</strong></p></li>
+</ol>
+<p>Another problem of WSD is that WSD systems are generally tested by having their results on a task compared against the task of human beings. This is called the problem of interjudge variance.</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Word-sense discreteness</strong></p></li>
+</ol>
+<p>Another difficulty in WSD is that words cannot be easily divided into discrete submeanings.</p>
+</div>
+</div>
+
+
+        </div>
+      </div>
+
+      <div id="side-menu-container">
+
+        <div id="search" role="search">
+        <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+            <input type="text" name="q" placeholder="Search..." />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+        </form>
+</div>
+
+        <div id="side-menu" role="navigation">
+
+          
+  
+    
+  
+  
+    <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="NLP%20Introduction.html"><em>What is NLP?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Components%20of%20NLP.html"><em>Components of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Phases%20of%20NLP.html"><em>Phases of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ambiguity.html"><em>Ambiguity</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linguistic%20Resources.html"><em>Corpus</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Automata%20Theory.html"><em>Automata – What is it?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regular%20Expressions.html"><em>Regular Expressions</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Finite%20State%20Automata.html"><em>Finite State Automata</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Morphology.html"><em>What is Morphology</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Finite%20State%20Transducer.html"><em>Finite State Transducer</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="N-gram.html"><em>An Introduction to N-gram</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Smoothing.html"><em>Smoothing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Morphological%20Parsing.html"><em>Morphological Parsing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="POS%20Tagging.html"><em>Part of Speech(PoS) Tagging</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Semantics.html"><em>Semantic Analysis</em></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><em>Word Sense Disambiguation</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Discourse%20Processing.html"><em>Discourse Processing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Inception.html"><em>Natural Language Inception</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Information%20Retrieval.html"><em>Information Retrieval</em></a></li>
+</ul>
+
+  
+
+
+        </div>
+
+        
+
+      </div>
+
+    </div>
+
+<footer>
+    <div id="footer-info">
+        <ul id="build-details">
+            
+                <li class="footer-element">
+                    
+                        <a href="../_sources/docs/Word Sense Disambiguation.rst.txt" rel="nofollow"> source</a>
+                    
+                </li>
+            
+
+            
+
+            
+        </ul>
+        <div id="credit">
+            created with <a href="http://sphinx-doc.org/">Sphinx</a> and <a href="https://github.com/Autophagy/insegel">Insegel</a>
+
+        </div>
+    </div>
+
+    <a id="menu-toggle" class="fa fa-bars" aria-hidden="true"></a>
+
+    <script type="text/javascript">
+      $("#menu-toggle").click(function() {
+        $("#menu-toggle").toggleClass("toggled");
+        $("#side-menu-container").slideToggle(300);
+      });
+    </script>
+
+</footer> 
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2D2D2D" />
+  
+  <title>Natural Language Processing and Artificial Neural Networks :: Part of Speech(PoS) Tagging</title>
+  
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../_static/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../_static/img/favicon-16x16.png">
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+
+  <link rel="stylesheet" href="../_static/css/insegel.css"/>
+
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'',
+        VERSION:'2021.02',
+        LANGUAGE:'None',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+    };
+  </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/mathjax/tex-chtml.js"></script>
+
+  <script src="https://email.tl.fortawesome.com/c/eJxNjUEOgyAQAF8jR7Kw6wIHDh7sP1Cw2mgxgmn6-3JsMqc5zEQfE8dkxOY1KKMUOI3ACFKRJpSW2AAp7ontYIaxI6i7XPJVwyeVfCQ550Os3jLrGSNOLgbdAy6s0PBk2TFNjEbsfq31LB0OnX407pJa5v2faRadwSW63mn5KuLyR9j2tgx3zecanl-55R_-jjPs"></script>
+
+</head>
+
+<body>
+  <div id="insegel-container">
+    <header>
+      <div id="logo-container">
+          
+          <a href="../index.html"><img src="../_static/img/logo.svg"></a>
+          
+
+      </div>
+      <div id="project-container">
+        <h1>Natural Language Processing and Artificial Neural Networks Documentation</h1>
+      </div>
+    </header>
+
+    <div id="content-container">
+
+      <div id="main-content-container">
+        <div id="main-content-header">
+          <h1><em>Part of Speech(PoS) Tagging</em></h1>
+        </div>
+        <div id="main-content">
+          
+  <div class="section" id="part-of-speech-pos-tagging">
+<h1><em>Part of Speech(PoS) Tagging</em><a class="headerlink" href="#part-of-speech-pos-tagging" title="Permalink to this headline">¶</a></h1>
+<p>Tagging is a kind of classification that may be defined as the automatic assignment of description to the tokens. Here the descriptor is called tag, which may represent one of the part-of-speech, semantic information and so on.</p>
+<p>Now, if we talk about Part-of-Speech (PoS) tagging, then it may be defined as the process of assigning one of the parts of speech to the given word. It is generally called POS tagging. In simple words, we can say that POS tagging is a task of labelling each word in a sentence with its appropriate part of speech. We already know that parts of speech include nouns, verb, adverbs, adjectives, pronouns, conjunction and their sub-categories.</p>
+<p>Most of the POS tagging falls under Rule Base POS tagging, Stochastic POS tagging and Transformation based tagging.</p>
+<div class="section" id="stochastic-pos-tagging">
+<h2><em>Stochastic POS Tagging</em><a class="headerlink" href="#stochastic-pos-tagging" title="Permalink to this headline">¶</a></h2>
+<p>Another technique of tagging is Stochastic POS Tagging. Now, the question that arises here is which model can be stochastic. The model that includes frequency or probability (statistics) can be called stochastic. Any number of different approaches to the problem of part-of-speech tagging can be referred to as stochastic tagger.</p>
+<p>The simplest stochastic tagger applies the following approaches for POS tagging −</p>
+<ul class="simple">
+<li><p><em>Word Frequency Approach</em></p></li>
+</ul>
+<p>In this approach, the stochastic taggers disambiguate the words based on the probability that a word occurs with a particular tag. We can also say that the tag encountered most frequently with the word in the training set is the one assigned to an ambiguous instance of that word. The main issue with this approach is that it may yield inadmissible sequence of tags.</p>
+<ul class="simple">
+<li><p><em>Tag Sequence Probabilities</em></p></li>
+</ul>
+<p>It is another approach of stochastic tagging, where the tagger calculates the probability of a given sequence of tags occurring. It is also called n-gram approach. It is called so because the best tag for a given word is determined by the probability at which it occurs with the n previous tags.</p>
+</div>
+<div class="section" id="properties-of-stochastic-post-tagging">
+<h2><em>Properties of Stochastic POST Tagging</em><a class="headerlink" href="#properties-of-stochastic-post-tagging" title="Permalink to this headline">¶</a></h2>
+<p>Stochastic POS taggers possess the following properties −</p>
+<ul class="simple">
+<li><p>This POS tagging is based on the probability of tag occurring.</p></li>
+<li><p>It requires training corpus</p></li>
+<li><p>There would be no probability for the words that do not exist in the corpus.</p></li>
+<li><p>It uses different testing corpus (other than training corpus).</p></li>
+<li><p>It is the simplest POS tagging because it chooses most frequent tags associated with a word in training corpus.</p></li>
+</ul>
+</div>
+<div class="section" id="hidden-markov-model">
+<h2><em>Hidden Markov Model</em><a class="headerlink" href="#hidden-markov-model" title="Permalink to this headline">¶</a></h2>
+<p>An HMM model may be defined as the doubly-embedded stochastic model, where the underlying stochastic process is hidden. This hidden stochastic process can only be observed through another set of stochastic processes that produces the sequence of observations.</p>
+<p><strong>Example</strong></p>
+<p>For example, a sequence of hidden coin tossing experiments is done and we see only the observation sequence consisting of heads and tails. The actual details of the process - how many coins used, the order in which they are selected - are hidden from us. By observing this sequence of heads and tails, we can build several HMMs to explain the sequence. Following is one form of Hidden Markov Model for this problem −</p>
+<div class="figure align-center">
+<img alt="../_images/hidden_markov_model.jpg" src="../_images/hidden_markov_model.jpg" />
+</div>
+<p>We assumed that there are two states in the HMM and each of the state corresponds to the selection of different biased coin. Following matrix gives the state transition probabilities −</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A=\begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix}\end{split}\]</div>
+<p>Here,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a_{ij}\)</span> = probability of transition from one state to another from i to j.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a_{11} + a_{12}\)</span> = 1 and <span class="math notranslate nohighlight">\(a_{21} + a_{22}\)</span> =1</p></li>
+<li><p><span class="math notranslate nohighlight">\(P_{1}\)</span> = probability of heads of the first coin i.e. the bias of the first coin.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P_{2}\)</span> = probability of heads of the second coin i.e. the bias of the second coin.</p></li>
+</ul>
+<p>We can also create an HMM model assuming that there are 3 coins or more.</p>
+<p>This way, we can characterize HMM by the following elements −</p>
+<ul class="simple">
+<li><p>N, the number of states in the model (in the above example N =2, only two states).</p></li>
+<li><p>M, the number of distinct observations that can appear with each state in the above example M = 2, i.e., H or T).</p></li>
+<li><p>A, the state transition probability distribution − the matrix A in the above example.</p></li>
+<li><p>P, the probability distribution of the observable symbols in each state (in our example P1 and P2).</p></li>
+<li><p>I, the initial state distribution.</p></li>
+</ul>
+</div>
+<div class="section" id="use-of-hmm-for-pos-tagging">
+<h2><em>Use of HMM for POS Tagging</em><a class="headerlink" href="#use-of-hmm-for-pos-tagging" title="Permalink to this headline">¶</a></h2>
+<p>The POS tagging process is the process of finding the sequence of tags which is most likely to have generated a given word sequence. We can model this POS process by using a Hidden Markov Model (HMM), where <strong>tags</strong> are the <strong>hidden states</strong> that produced the <strong>observable output</strong>, i.e., the <strong>words</strong>.</p>
+<p>Mathematically, in POS tagging, we are always interested in finding a tag sequence (C) which maximizes −</p>
+<p><strong>P(C|W)</strong></p>
+<p>Where,</p>
+<p>C = <span class="math notranslate nohighlight">\(C_{1}, C_{2}, C_{3}... C_{T}\)</span></p>
+<p>W = <span class="math notranslate nohighlight">\(W_{1}, W_{2}, W_{3}, W_{T}\)</span></p>
+<p>On the other side of coin, the fact is that we need a lot of statistical data to reasonably estimate such kind of sequences. However, to simplify the problem, we can apply some mathematical transformations along with some assumptions.</p>
+<p>The use of HMM to do a POS tagging is a special case of Bayesian interference. Hence, we will start by restating the problem using Bayes’ rule, which says that the above-mentioned conditional probability is equal to −</p>
+<div class="math notranslate nohighlight">
+\[\frac{P(C_{1},..., C_{T}) \times P(W_{1},..., W_{T} | C_{1},..., C_{T})}{P(W1,..., WT)}\]</div>
+<p>We can eliminate the denominator in all these cases because we are interested in finding the sequence C which maximizes the above value. This will not affect our answer. Now, our problem reduces to finding the sequence C that maximizes −</p>
+<div class="math notranslate nohighlight">
+\[P(C_{1},..., C_{T})\times P(W_{1},..., W_{T} | C_{1},..., C_{T})  \;\text{(1)}\]</div>
+<p>Even after reducing the problem in the above expression, it would require large amount of data. We can make reasonable independence assumptions about the two probabilities in the above expression to overcome the problem.</p>
+</div>
+<div class="section" id="first-assumption">
+<h2><em>First Assumption</em><a class="headerlink" href="#first-assumption" title="Permalink to this headline">¶</a></h2>
+<p>The probability of a tag depends on the previous one (bigram model) or previous two (trigram model) or previous n tags (n-gram model) which, mathematically, can be explained as follows −</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}P(C_{1},..., C_{T}) = Π_{i=1..T} P(C_{i}|C_{i-n+1}…C_{i-1})  &amp;&amp;\text{(n-gram model)}\\~\\\end{split}\\P(C_{1},..., C_{T}) = Π_{i=1..T} P(C_{i}|C_{i-1})  &amp;&amp;\text{(bi-gram model)}\end{aligned}\end{align} \]</div>
+<p>The beginning of a sentence can be accounted for by assuming an initial probability for each tag.</p>
+<div class="math notranslate nohighlight">
+\[P(C_{1}|C_{0}) = P_{initial} (C_{1})\]</div>
+</div>
+<div class="section" id="second-assumption">
+<h2><em>Second Assumption</em><a class="headerlink" href="#second-assumption" title="Permalink to this headline">¶</a></h2>
+<p>The second probability in equation (1) above can be approximated by assuming that a word appears in a category independent of the words in the preceding or succeeding categories which can be explained mathematically as follows −</p>
+<div class="math notranslate nohighlight">
+\[P(W_{1},..., W_{T} | C_{1},..., C_{T}) = Π_{i=1..T} P(W_{i}|C_{i})\]</div>
+<p>Now, on the basis of the above two assumptions, our goal reduces to finding a sequence C which maximizes</p>
+<div class="math notranslate nohighlight">
+\[Π_{i=1...T} P(C_{i}|C_{i-1})\times P(W_{i}|C_{i})\]</div>
+<p>Now the question that arises here is has converting the problem to the above form really helped us. The answer is - yes, it has. If we have a large tagged corpus, then the two probabilities in the above formula can be calculated as −</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}P(C_{i=VERB}|C_{i-1=NOUN}) = \frac{\text{(# of instances where Verb follows Noun)}}{\text{(# of instances where Noun appears)}}  &amp;&amp;\text{(2)}\\~\\\end{split}\\P(W_{i}|C_{i}) = \frac{\text{(# of instances where Wi appears in Ci)}}{\text{(# of instances where Ci appears)}}  &amp;&amp;\text{(3)}\end{aligned}\end{align} \]</div>
+</div>
+</div>
+
+
+        </div>
+      </div>
+
+      <div id="side-menu-container">
+
+        <div id="search" role="search">
+        <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+            <input type="text" name="q" placeholder="Search..." />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+        </form>
+</div>
+
+        <div id="side-menu" role="navigation">
+
+          
+  
+    
+  
+  
+    <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="NLP%20Introduction.html"><em>What is NLP?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Components%20of%20NLP.html"><em>Components of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Phases%20of%20NLP.html"><em>Phases of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ambiguity.html"><em>Ambiguity</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linguistic%20Resources.html"><em>Corpus</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Automata%20Theory.html"><em>Automata – What is it?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regular%20Expressions.html"><em>Regular Expressions</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Finite%20State%20Automata.html"><em>Finite State Automata</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Morphology.html"><em>What is Morphology</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Finite%20State%20Transducer.html"><em>Finite State Transducer</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="N-gram.html"><em>An Introduction to N-gram</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Smoothing.html"><em>Smoothing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Morphological%20Parsing.html"><em>Morphological Parsing</em></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><em>Part of Speech(PoS) Tagging</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Semantics.html"><em>Semantic Analysis</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Word%20Sense%20Disambiguation.html"><em>Word Sense Disambiguation</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Discourse%20Processing.html"><em>Discourse Processing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Inception.html"><em>Natural Language Inception</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Information%20Retrieval.html"><em>Information Retrieval</em></a></li>
+</ul>
+
+  
+
+
+        </div>
+
+        
+
+      </div>
+
+    </div>
+
+<footer>
+    <div id="footer-info">
+        <ul id="build-details">
+            
+                <li class="footer-element">
+                    
+                        <a href="../_sources/docs/POS Tagging.rst.txt" rel="nofollow"> source</a>
+                    
+                </li>
+            
+
+            
+
+            
+        </ul>
+        <div id="credit">
+            created with <a href="http://sphinx-doc.org/">Sphinx</a> and <a href="https://github.com/Autophagy/insegel">Insegel</a>
+
+        </div>
+    </div>
+
+    <a id="menu-toggle" class="fa fa-bars" aria-hidden="true"></a>
+
+    <script type="text/javascript">
+      $("#menu-toggle").click(function() {
+        $("#menu-toggle").toggleClass("toggled");
+        $("#side-menu-container").slideToggle(300);
+      });
+    </script>
+
+</footer> 
+
+</div>
+
+</body>
+</html>

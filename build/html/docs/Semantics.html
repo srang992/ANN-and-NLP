@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2D2D2D" />
+  
+  <title>Natural Language Processing and Artificial Neural Networks :: Semantic Analysis</title>
+  
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../_static/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../_static/img/favicon-16x16.png">
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+
+  <link rel="stylesheet" href="../_static/css/insegel.css"/>
+
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'',
+        VERSION:'2021.02',
+        LANGUAGE:'None',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+    };
+  </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/mathjax/tex-chtml.js"></script>
+
+  <script src="https://email.tl.fortawesome.com/c/eJxNjUEOgyAQAF8jR7Kw6wIHDh7sP1Cw2mgxgmn6-3JsMqc5zEQfE8dkxOY1KKMUOI3ACFKRJpSW2AAp7ontYIaxI6i7XPJVwyeVfCQ550Os3jLrGSNOLgbdAy6s0PBk2TFNjEbsfq31LB0OnX407pJa5v2faRadwSW63mn5KuLyR9j2tgx3zecanl-55R_-jjPs"></script>
+
+</head>
+
+<body>
+  <div id="insegel-container">
+    <header>
+      <div id="logo-container">
+          
+          <a href="../index.html"><img src="../_static/img/logo.svg"></a>
+          
+
+      </div>
+      <div id="project-container">
+        <h1>Natural Language Processing and Artificial Neural Networks Documentation</h1>
+      </div>
+    </header>
+
+    <div id="content-container">
+
+      <div id="main-content-container">
+        <div id="main-content-header">
+          <h1><em>Semantic Analysis</em></h1>
+        </div>
+        <div id="main-content">
+          
+  <div class="section" id="semantic-analysis">
+<h1><em>Semantic Analysis</em><a class="headerlink" href="#semantic-analysis" title="Permalink to this headline">¶</a></h1>
+<p>The purpose of semantic analysis is to draw exact meaning, or you can say dictionary meaning from the text. The work of semantic analyzer is to check the text for meaningfulness.</p>
+<p>We already know that lexical analysis also deals with the meaning of the words, then how is semantic analysis different from lexical analysis? Lexical analysis is based on smaller token but on the other side semantic analysis focuses on larger chunks. That is why semantic analysis can be divided into the following two parts −</p>
+<ul class="simple">
+<li><p><strong>Studying meaning of individual word</strong></p></li>
+</ul>
+<p>It is the first part of the semantic analysis in which the study of the meaning of individual words is performed. This part is called lexical semantics.</p>
+<ul class="simple">
+<li><p><strong>Studying the combination of individual words</strong></p></li>
+</ul>
+<p>In the second part, the individual words will be combined to provide meaning in sentences.</p>
+<p>The most important task of semantic analysis is to get the proper meaning of the sentence. For example, analyze the sentence <strong>“Ram is great.”</strong> In this sentence, the speaker is talking either about Lord Ram or about a person whose name is Ram. That is why the job, to get the proper meaning of the sentence, of semantic analyzer is important.</p>
+<div class="section" id="elements-of-semantic-analysis">
+<h2><em>Elements of Semantic Analysis</em><a class="headerlink" href="#elements-of-semantic-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Followings are some important elements of semantic analysis −</p>
+<ol class="arabic simple">
+<li><p><strong>Hyponymy</strong></p></li>
+</ol>
+<p>It may be defined as the relationship between a generic term and instances of that generic term. Here the generic term is called hypernym and its instances are called hyponyms. For example, the word color is hypernym and the color blue, yellow etc. are hyponyms.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Homonymy</strong></p></li>
+</ol>
+<p>It may be defined as the words having same spelling or same form but having different and unrelated meaning. For example, the word “Bat” is a homonymy word because bat can be an implement to hit a ball or bat is a nocturnal flying mammal also.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Polysemy</strong></p></li>
+</ol>
+<p>Polysemy is a Greek word, which means “many signs”. It is a word or phrase with different but related sense. In other words, we can say that polysemy has the same spelling but different and related meaning. For example, the word “bank” is a polysemy word having the following meanings −</p>
+<ul class="simple">
+<li><p>A financial institution.</p></li>
+<li><p>The building in which such an institution is located.</p></li>
+<li><p>A synonym for “to rely on”.</p></li>
+</ul>
+</div>
+<div class="section" id="difference-between-polysemy-and-homonymy">
+<h2><em>Difference between Polysemy and Homonymy</em><a class="headerlink" href="#difference-between-polysemy-and-homonymy" title="Permalink to this headline">¶</a></h2>
+<p>Both polysemy and homonymy words have the same syntax or spelling. The main difference between them is that in polysemy, the meanings of the words are related but in homonymy, the meanings of the words are not related. For example, if we talk about the same word “Bank”, we can write the meaning ‘a financial institution’ or ‘a river bank’. In that case it would be the example of homonym because the meanings are unrelated to each other.</p>
+<ul class="simple">
+<li><p><strong>Synonymy</strong></p></li>
+</ul>
+<p>It is the relation between two lexical items having different forms but expressing the same or a close meaning. Examples are ‘author/writer’, ‘fate/destiny’.</p>
+<ul class="simple">
+<li><p><strong>Antonymy</strong></p></li>
+</ul>
+<p>It is the relation between two lexical items having symmetry between their semantic components relative to an axis. The scope of antonymy is as follows −</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Application of property or not</strong> − Example is ‘life/death’, ‘certitude/incertitude’</p></li>
+<li><p><strong>Application of scalable property</strong> − Example is ‘rich/poor’, ‘hot/cold’</p></li>
+<li><p><strong>Application of a usage</strong> − Example is ‘father/son’, ‘moon/sun’.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="meaning-representation">
+<h2><em>Meaning Representation</em><a class="headerlink" href="#meaning-representation" title="Permalink to this headline">¶</a></h2>
+<p>Semantic analysis creates a representation of the meaning of a sentence. But before getting into the concept and approaches related to meaning representation, we need to understand the building blocks of semantic system.</p>
+<div class="section" id="building-blocks-of-semantic-system">
+<h3><em>Building Blocks of Semantic System</em><a class="headerlink" href="#building-blocks-of-semantic-system" title="Permalink to this headline">¶</a></h3>
+<p>In word representation or representation of the meaning of the words, the following building blocks play an important role −</p>
+<ul class="simple">
+<li><p><strong>Entities</strong> − It represents the individual such as a particular person, location etc. For example, Haryana. India, Ram all are entities.</p></li>
+<li><p><strong>Concepts</strong> − It represents the general category of the individuals such as a person, city, etc.</p></li>
+<li><p><strong>Relations</strong> − It represents the relationship between entities and concept. For example, Ram is a person.</p></li>
+<li><p><strong>Predicates</strong> − It represents the verb structures. For example, semantic roles and case grammar are the examples of predicates.</p></li>
+</ul>
+<p>Now, we can understand that meaning representation shows how to put together the building blocks of semantic systems. In other words, it shows how to put together entities, concepts, relation and predicates to describe a situation. It also enables the reasoning about the semantic world.</p>
+</div>
+<div class="section" id="approaches-to-meaning-representations">
+<h3><em>Approaches to Meaning Representations</em><a class="headerlink" href="#approaches-to-meaning-representations" title="Permalink to this headline">¶</a></h3>
+<p>Semantic analysis uses the following approaches for the representation of meaning −</p>
+<ul class="simple">
+<li><p><strong>First order predicate logic (FOPL)</strong></p></li>
+<li><p><strong>Semantic Nets</strong></p></li>
+<li><p><strong>Frames</strong></p></li>
+<li><p><strong>Conceptual dependency (CD)</strong></p></li>
+<li><p><strong>Rule-based architecture</strong></p></li>
+<li><p><strong>Case Grammar</strong></p></li>
+<li><p><strong>Conceptual Graphs</strong></p></li>
+</ul>
+</div>
+<div class="section" id="need-of-meaning-representations">
+<h3><em>Need of Meaning Representations</em><a class="headerlink" href="#need-of-meaning-representations" title="Permalink to this headline">¶</a></h3>
+<p>A question that arises here is why do we need meaning representation? Followings are the reasons for the same −</p>
+<ul class="simple">
+<li><p><strong>Linking of linguistic elements to non-linguistic elements</strong></p></li>
+</ul>
+<p>The very first reason is that with the help of meaning representation the linking of linguistic elements to the non-linguistic elements can be done.</p>
+<ul class="simple">
+<li><p><strong>Representing variety at lexical level</strong></p></li>
+</ul>
+<p>With the help of meaning representation, unambiguous, canonical forms can be represented at the lexical level.</p>
+<ul class="simple">
+<li><p><strong>Can be used for reasoning</strong></p></li>
+</ul>
+<p>Meaning representation can be used to reason for verifying what is true in the world as well as to infer the knowledge from the semantic representation.</p>
+</div>
+</div>
+<div class="section" id="lexical-semantics">
+<h2><em>Lexical Semantics</em><a class="headerlink" href="#lexical-semantics" title="Permalink to this headline">¶</a></h2>
+<p>The first part of semantic analysis, studying the meaning of individual words is called lexical semantics. It includes words, sub-words, affixes (sub-units), compound words and phrases also. All the words, sub-words, etc. are collectively called lexical items. In other words, we can say that lexical semantics is the relationship between lexical items, meaning of sentences and syntax of sentence.</p>
+<p>Following are the steps involved in lexical semantics −</p>
+<ol class="arabic simple">
+<li><p>Classification of lexical items like words, sub-words, affixes, etc. is performed in lexical semantics.</p></li>
+<li><p>Decomposition of lexical items like words, sub-words, affixes, etc. is performed in lexical semantics.</p></li>
+<li><p>Differences as well as similarities between various lexical semantic structures is also analyzed.</p></li>
+</ol>
+</div>
+</div>
+
+
+        </div>
+      </div>
+
+      <div id="side-menu-container">
+
+        <div id="search" role="search">
+        <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+            <input type="text" name="q" placeholder="Search..." />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+        </form>
+</div>
+
+        <div id="side-menu" role="navigation">
+
+          
+  
+    
+  
+  
+    <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="NLP%20Introduction.html"><em>What is NLP?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Components%20of%20NLP.html"><em>Components of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Phases%20of%20NLP.html"><em>Phases of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ambiguity.html"><em>Ambiguity</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linguistic%20Resources.html"><em>Corpus</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Automata%20Theory.html"><em>Automata – What is it?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regular%20Expressions.html"><em>Regular Expressions</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Finite%20State%20Automata.html"><em>Finite State Automata</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Morphology.html"><em>What is Morphology</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Finite%20State%20Transducer.html"><em>Finite State Transducer</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="N-gram.html"><em>An Introduction to N-gram</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Smoothing.html"><em>Smoothing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Morphological%20Parsing.html"><em>Morphological Parsing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="POS%20Tagging.html"><em>Part of Speech(PoS) Tagging</em></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><em>Semantic Analysis</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Word%20Sense%20Disambiguation.html"><em>Word Sense Disambiguation</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Discourse%20Processing.html"><em>Discourse Processing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Inception.html"><em>Natural Language Inception</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Information%20Retrieval.html"><em>Information Retrieval</em></a></li>
+</ul>
+
+  
+
+
+        </div>
+
+        
+
+      </div>
+
+    </div>
+
+<footer>
+    <div id="footer-info">
+        <ul id="build-details">
+            
+                <li class="footer-element">
+                    
+                        <a href="../_sources/docs/Semantics.rst.txt" rel="nofollow"> source</a>
+                    
+                </li>
+            
+
+            
+
+            
+        </ul>
+        <div id="credit">
+            created with <a href="http://sphinx-doc.org/">Sphinx</a> and <a href="https://github.com/Autophagy/insegel">Insegel</a>
+
+        </div>
+    </div>
+
+    <a id="menu-toggle" class="fa fa-bars" aria-hidden="true"></a>
+
+    <script type="text/javascript">
+      $("#menu-toggle").click(function() {
+        $("#menu-toggle").toggleClass("toggled");
+        $("#side-menu-container").slideToggle(300);
+      });
+    </script>
+
+</footer> 
+
+</div>
+
+</body>
+</html>

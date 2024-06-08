@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2D2D2D" />
+  
+  <title>Natural Language Processing and Artificial Neural Networks :: Automata – What is it?</title>
+  
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../_static/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../_static/img/favicon-16x16.png">
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+
+  <link rel="stylesheet" href="../_static/css/insegel.css"/>
+
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'',
+        VERSION:'2021.02',
+        LANGUAGE:'None',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+    };
+  </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/mathjax/tex-chtml.js"></script>
+
+  <script src="https://email.tl.fortawesome.com/c/eJxNjUEOgyAQAF8jR7Kw6wIHDh7sP1Cw2mgxgmn6-3JsMqc5zEQfE8dkxOY1KKMUOI3ACFKRJpSW2AAp7ontYIaxI6i7XPJVwyeVfCQ550Os3jLrGSNOLgbdAy6s0PBk2TFNjEbsfq31LB0OnX407pJa5v2faRadwSW63mn5KuLyR9j2tgx3zecanl-55R_-jjPs"></script>
+
+</head>
+
+<body>
+  <div id="insegel-container">
+    <header>
+      <div id="logo-container">
+          
+          <a href="../index.html"><img src="../_static/img/logo.svg"></a>
+          
+
+      </div>
+      <div id="project-container">
+        <h1>Natural Language Processing and Artificial Neural Networks Documentation</h1>
+      </div>
+    </header>
+
+    <div id="content-container">
+
+      <div id="main-content-container">
+        <div id="main-content-header">
+          <h1><em>Automata – What is it?</em></h1>
+        </div>
+        <div id="main-content">
+          
+  <div class="section" id="automata-what-is-it">
+<h1><em>Automata – What is it?</em><a class="headerlink" href="#automata-what-is-it" title="Permalink to this headline">¶</a></h1>
+<p>The term “Automata” is derived from the Greek word “αὐτόματα” which means “self-acting”. An automaton (Automata in plural) is an abstract self-propelled computing device which follows a predetermined sequence of operations automatically.</p>
+<p>An automaton with a finite number of states is called a Finite Automaton (FA) or Finite State Machine (FSM).</p>
+<div class="section" id="formal-definition-of-a-finite-automaton">
+<h2><em>Formal definition of a Finite Automaton</em><a class="headerlink" href="#formal-definition-of-a-finite-automaton" title="Permalink to this headline">¶</a></h2>
+<p>An automaton can be represented by a 5-tuple (Q, ∑, δ, q0, F), where −</p>
+<ul class="simple">
+<li><p>Q is a finite set of states.</p></li>
+<li><p>∑ is a finite set of symbols, called the alphabet of the automaton.</p></li>
+<li><p>δ is the transition function.</p></li>
+<li><p>q0 is the initial state from where any input is processed (q0 ∈ Q).</p></li>
+<li><p>F is a set of final state/states of Q (F ⊆ Q).</p></li>
+</ul>
+<div class="section" id="related-terminologies">
+<h3><em>Related Terminologies</em><a class="headerlink" href="#related-terminologies" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Alphabet</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><em>Definition</em> − An alphabet is any finite set of symbols.</p></li>
+<li><p><em>Example</em>  − ∑ = {a, b, c, d} is an alphabet set where ‘a’, ‘b’, ‘c’, and ‘d’ are symbols.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>String</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><em>Definition</em> − A string is a finite sequence of symbols taken from ∑.</p></li>
+<li><p><em>Example</em>  − ‘cabcad’ is a valid string on the alphabet set ∑ = {a, b, c, d}</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>Length of a String</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><em>Definition</em> − It is the number of symbols present in a string. (Denoted by <a href="#id5"><span class="problematic" id="id6">|S|</span></a>).</p></li>
+<li><p><em>Examples</em> −</p></li>
+</ul>
+<p>If S = ‘cabcad’, <a href="#id1"><span class="problematic" id="id2">|</span></a>S|= 6</p>
+<p>If <a href="#id3"><span class="problematic" id="id4">|</span></a>S|= 0, it is called an empty string (Denoted by λ or ε)</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Kleene Star</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><em>Definition</em> − The Kleene star, ∑*, is a unary operator on a set of symbols or strings, ∑, that gives the infinite set of all possible strings of all possible lengths over ∑ including λ.</p></li>
+<li><p><em>Representation</em> − ∑* = ∑0 ∪ ∑1 ∪ ∑2 ∪……. where ∑p is the set of all possible strings of length p.</p></li>
+<li><p><em>Example</em> − If ∑ = {a, b}, ∑* = {λ, a, b, aa, ab, ba, bb,………..}</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p><strong>Kleene Closure / Plus</strong></p></li>
+</ol>
+<ul>
+<li><p><em>Definition</em> − The set ∑+ is the infinite set of all possible strings of all possible lengths over ∑ excluding λ.</p></li>
+<li><p><em>Representation</em> − ∑+ = ∑1 ∪ ∑2 ∪ ∑3 ∪…</p>
+<blockquote>
+<div><p>∑+ = ∑* − { λ }</p>
+</div></blockquote>
+</li>
+</ul>
+<p>Example − If ∑ = { a, b } , ∑+ = { a, b, aa, ab, ba, bb,…}</p>
+<ol class="arabic simple" start="6">
+<li><p><strong>Language</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><em>Definition</em> − A language is a subset of ∑* for some alphabet ∑. It can be finite or infinite.</p></li>
+<li><p><em>Example</em> − If the language takes all possible strings of length 2 over ∑ = {a, b}, then L = { ab, aa, ba, bb }</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+        </div>
+      </div>
+
+      <div id="side-menu-container">
+
+        <div id="search" role="search">
+        <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+            <input type="text" name="q" placeholder="Search..." />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+        </form>
+</div>
+
+        <div id="side-menu" role="navigation">
+
+          
+  
+    
+  
+  
+    <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="NLP%20Introduction.html"><em>What is NLP?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Components%20of%20NLP.html"><em>Components of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Phases%20of%20NLP.html"><em>Phases of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ambiguity.html"><em>Ambiguity</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linguistic%20Resources.html"><em>Corpus</em></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><em>Automata – What is it?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regular%20Expressions.html"><em>Regular Expressions</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Finite%20State%20Automata.html"><em>Finite State Automata</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Morphology.html"><em>What is Morphology</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Finite%20State%20Transducer.html"><em>Finite State Transducer</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="N-gram.html"><em>An Introduction to N-gram</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Smoothing.html"><em>Smoothing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Morphological%20Parsing.html"><em>Morphological Parsing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="POS%20Tagging.html"><em>Part of Speech(PoS) Tagging</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Semantics.html"><em>Semantic Analysis</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Word%20Sense%20Disambiguation.html"><em>Word Sense Disambiguation</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Discourse%20Processing.html"><em>Discourse Processing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Inception.html"><em>Natural Language Inception</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Information%20Retrieval.html"><em>Information Retrieval</em></a></li>
+</ul>
+
+  
+
+
+        </div>
+
+        
+
+      </div>
+
+    </div>
+
+<footer>
+    <div id="footer-info">
+        <ul id="build-details">
+            
+                <li class="footer-element">
+                    
+                        <a href="../_sources/docs/Automata Theory.rst.txt" rel="nofollow"> source</a>
+                    
+                </li>
+            
+
+            
+
+            
+        </ul>
+        <div id="credit">
+            created with <a href="http://sphinx-doc.org/">Sphinx</a> and <a href="https://github.com/Autophagy/insegel">Insegel</a>
+
+        </div>
+    </div>
+
+    <a id="menu-toggle" class="fa fa-bars" aria-hidden="true"></a>
+
+    <script type="text/javascript">
+      $("#menu-toggle").click(function() {
+        $("#menu-toggle").toggleClass("toggled");
+        $("#side-menu-container").slideToggle(300);
+      });
+    </script>
+
+</footer> 
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2D2D2D" />
+  
+  <title>Natural Language Processing and Artificial Neural Networks :: An Introduction to N-gram</title>
+  
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../_static/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../_static/img/favicon-16x16.png">
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+
+  <link rel="stylesheet" href="../_static/css/insegel.css"/>
+
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'',
+        VERSION:'2021.02',
+        LANGUAGE:'None',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+    };
+  </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/mathjax/tex-chtml.js"></script>
+
+  <script src="https://email.tl.fortawesome.com/c/eJxNjUEOgyAQAF8jR7Kw6wIHDh7sP1Cw2mgxgmn6-3JsMqc5zEQfE8dkxOY1KKMUOI3ACFKRJpSW2AAp7ontYIaxI6i7XPJVwyeVfCQ550Os3jLrGSNOLgbdAy6s0PBk2TFNjEbsfq31LB0OnX407pJa5v2faRadwSW63mn5KuLyR9j2tgx3zecanl-55R_-jjPs"></script>
+
+</head>
+
+<body>
+  <div id="insegel-container">
+    <header>
+      <div id="logo-container">
+          
+          <a href="../index.html"><img src="../_static/img/logo.svg"></a>
+          
+
+      </div>
+      <div id="project-container">
+        <h1>Natural Language Processing and Artificial Neural Networks Documentation</h1>
+      </div>
+    </header>
+
+    <div id="content-container">
+
+      <div id="main-content-container">
+        <div id="main-content-header">
+          <h1><em>An Introduction to N-gram</em></h1>
+        </div>
+        <div id="main-content">
+          
+  <div class="section" id="an-introduction-to-n-gram">
+<h1><em>An Introduction to N-gram</em><a class="headerlink" href="#an-introduction-to-n-gram" title="Permalink to this headline">¶</a></h1>
+<p>In this part we are going to learn about N-grams, a concept found in Natural Language Processing ( aka NLP). First of all, let’s see what the term ‘N-gram’ means. Turns out that is the simplest bit, an N-gram is simply a sequence of N words. For instance, let us take a look at the following examples.</p>
+<ol class="arabic simple">
+<li><p>San Francisco (is a 2-gram)</p></li>
+<li><p>The Three Musketeers (is a 3-gram)</p></li>
+<li><p>She stood up slowly (is a 4-gram)</p></li>
+</ol>
+<p>Now which of these three N-grams have you seen quite frequently? Probably, <strong>“San Francisco”</strong> and <strong>“The Three Musketeers”</strong>. On the other hand, you might not have seen <strong>“She stood up slowly”</strong> that frequently. Basically, <strong>“She stood up slowly”</strong> is an example of an N-gram that does not occur as often in sentences as Examples 1 and 2.</p>
+<p>Now if we assign a probability to the occurrence of an N-gram or the probability of a word occurring next in a sequence of words, it can be very useful. Why?</p>
+<p>First of all, it can help in deciding which N-grams can be chunked together to form single entities (like <strong>“San Francisco”</strong> chunked together as one word, <strong>“high school”</strong> being chunked as one word).</p>
+<p>It can also help make next word predictions. Say you have the partial sentence <code class="docutils literal notranslate"><span class="pre">“Please</span> <span class="pre">hand</span> <span class="pre">over</span> <span class="pre">your”</span></code>. Then it is more likely that the next word is going to be <code class="docutils literal notranslate"><span class="pre">“test”</span></code> or <code class="docutils literal notranslate"><span class="pre">“assignment”</span></code> or <code class="docutils literal notranslate"><span class="pre">“paper”</span></code> than the next word being <code class="docutils literal notranslate"><span class="pre">“school”</span></code>.</p>
+<p>It can also help to make spelling error corrections. For instance, the sentence <code class="docutils literal notranslate"><span class="pre">“drink</span> <span class="pre">cofee”</span></code> could be corrected to <code class="docutils literal notranslate"><span class="pre">“drink</span> <span class="pre">coffee”</span></code> if you knew that the word <code class="docutils literal notranslate"><span class="pre">“coffee”</span></code> had a high probability of occurrence after the word <code class="docutils literal notranslate"><span class="pre">“drink”</span></code> and also the overlap of letters between <code class="docutils literal notranslate"><span class="pre">“cofee”</span></code> and <code class="docutils literal notranslate"><span class="pre">“coffee”</span></code> is high.
+As you can see, assigning these probabilities has a huge potential in the NLP domain.</p>
+<p>Now that we understand this concept, we can build with it: that’s the N-gram model. Basically, an N-gram model predicts the occurrence of a word based on the occurrence of its N – 1 previous words. So here we are answering the question – how far back in the history of a sequence of words should we go to predict the next word? For instance, a bigram model (N = 2) predicts the occurrence of a word given only its previous word (as N – 1 = 1 in this case). Similarly, a trigram model (N = 3) predicts the occurrence of a word based on its previous two words (as N – 1 = 2 in this case).</p>
+<p>Let us see a way to assign a probability to a word occurring next in a sequence of words. First of all, we need a very large sample of English sentences (called a corpus).</p>
+<p>For the purpose of our example, we’ll consider a very small sample of sentences, but in reality, a corpus will be extremely large. Say our corpus contains the following sentences:</p>
+<ul class="simple">
+<li><p>He said thank you.</p></li>
+<li><p>He said bye as he walked through the door.</p></li>
+<li><p>He went to San Diego.</p></li>
+<li><p>San Diego has nice weather.</p></li>
+<li><p>It is raining in San Francisco.</p></li>
+</ul>
+<p>Let’s assume a bigram model. So we are going to find the probability of a word based only on its previous word. In general, we can say that this probability is (the number of times the previous word ‘wp’ occurs before the word ‘wn’) / (the total number of times the previous word ‘wp’ occurs in the corpus) =</p>
+<blockquote>
+<div><p><strong>(Count (wp wn))/(Count (wp))</strong></p>
+</div></blockquote>
+<p>Let’s work this out with an example.
+To find the probability of the word “you” following the word “thank”, we can write this as P (you | thank) which is a conditional probability.
+This becomes equal to:</p>
+<p><strong>=(No. of times “Thank You” occurs) / (No. of times “Thank” occurs)</strong>
+<strong>= 1/1</strong>
+<strong>= 1</strong></p>
+<p>We can say with certainty that whenever “Thank” occurs, it will be followed by “You” (This is because we have trained on a set of only five sentences and “Thank” occurred only once in the context of “Thank You”). Let’s see an example of a case when the preceding word occurs in different contexts.</p>
+<p>Let’s calculate the probability of the word “Diego” coming after “San”. We want to find the P (Diego | San). This means that we are trying to find the probability that the next word will be “Diego” given the word “San”. We can do this by:</p>
+<p><strong>=(No of times “San Diego” occurs) / (No. of times “San” occurs)</strong>
+<strong>= 2/3</strong>
+<strong>= 0.67</strong></p>
+<p>This is because in our corpus, one of the three preceding “San”s was followed by “Francisco”. So, the <code class="docutils literal notranslate"><span class="pre">P</span> <span class="pre">(Francisco</span> <span class="pre">|</span> <span class="pre">San)</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">/</span> <span class="pre">3</span></code>.
+In our corpus, only “Diego” and “Francisco” occur after “San” with the probabilities 2 / 3 and 1 / 3 respectively. So if we want to create a next word prediction software based on our corpus, and a user types in “San”, we will give two options: “Diego” ranked most likely and “Francisco” ranked less likely.</p>
+<p>Generally, the bigram model works well and it may not be necessary to use trigram models or higher N-gram models.</p>
+</div>
+
+
+        </div>
+      </div>
+
+      <div id="side-menu-container">
+
+        <div id="search" role="search">
+        <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+            <input type="text" name="q" placeholder="Search..." />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+        </form>
+</div>
+
+        <div id="side-menu" role="navigation">
+
+          
+  
+    
+  
+  
+    <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="NLP%20Introduction.html"><em>What is NLP?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Components%20of%20NLP.html"><em>Components of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Phases%20of%20NLP.html"><em>Phases of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ambiguity.html"><em>Ambiguity</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linguistic%20Resources.html"><em>Corpus</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Automata%20Theory.html"><em>Automata – What is it?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regular%20Expressions.html"><em>Regular Expressions</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Finite%20State%20Automata.html"><em>Finite State Automata</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Morphology.html"><em>What is Morphology</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Finite%20State%20Transducer.html"><em>Finite State Transducer</em></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><em>An Introduction to N-gram</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Smoothing.html"><em>Smoothing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Morphological%20Parsing.html"><em>Morphological Parsing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="POS%20Tagging.html"><em>Part of Speech(PoS) Tagging</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Semantics.html"><em>Semantic Analysis</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Word%20Sense%20Disambiguation.html"><em>Word Sense Disambiguation</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Discourse%20Processing.html"><em>Discourse Processing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Inception.html"><em>Natural Language Inception</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Information%20Retrieval.html"><em>Information Retrieval</em></a></li>
+</ul>
+
+  
+
+
+        </div>
+
+        
+
+      </div>
+
+    </div>
+
+<footer>
+    <div id="footer-info">
+        <ul id="build-details">
+            
+                <li class="footer-element">
+                    
+                        <a href="../_sources/docs/N-gram.rst.txt" rel="nofollow"> source</a>
+                    
+                </li>
+            
+
+            
+
+            
+        </ul>
+        <div id="credit">
+            created with <a href="http://sphinx-doc.org/">Sphinx</a> and <a href="https://github.com/Autophagy/insegel">Insegel</a>
+
+        </div>
+    </div>
+
+    <a id="menu-toggle" class="fa fa-bars" aria-hidden="true"></a>
+
+    <script type="text/javascript">
+      $("#menu-toggle").click(function() {
+        $("#menu-toggle").toggleClass("toggled");
+        $("#side-menu-container").slideToggle(300);
+      });
+    </script>
+
+</footer> 
+
+</div>
+
+</body>
+</html>

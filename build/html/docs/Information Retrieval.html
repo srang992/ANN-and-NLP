@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2D2D2D" />
+  
+  <title>Natural Language Processing and Artificial Neural Networks :: Information Retrieval</title>
+  
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../_static/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../_static/img/favicon-16x16.png">
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+
+  <link rel="stylesheet" href="../_static/css/insegel.css"/>
+
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'',
+        VERSION:'2021.02',
+        LANGUAGE:'None',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+    };
+  </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/mathjax/tex-chtml.js"></script>
+
+  <script src="https://email.tl.fortawesome.com/c/eJxNjUEOgyAQAF8jR7Kw6wIHDh7sP1Cw2mgxgmn6-3JsMqc5zEQfE8dkxOY1KKMUOI3ACFKRJpSW2AAp7ontYIaxI6i7XPJVwyeVfCQ550Os3jLrGSNOLgbdAy6s0PBk2TFNjEbsfq31LB0OnX407pJa5v2faRadwSW63mn5KuLyR9j2tgx3zecanl-55R_-jjPs"></script>
+
+</head>
+
+<body>
+  <div id="insegel-container">
+    <header>
+      <div id="logo-container">
+          
+          <a href="../index.html"><img src="../_static/img/logo.svg"></a>
+          
+
+      </div>
+      <div id="project-container">
+        <h1>Natural Language Processing and Artificial Neural Networks Documentation</h1>
+      </div>
+    </header>
+
+    <div id="content-container">
+
+      <div id="main-content-container">
+        <div id="main-content-header">
+          <h1><em>Information Retrieval</em></h1>
+        </div>
+        <div id="main-content">
+          
+  <div class="section" id="information-retrieval">
+<h1><em>Information Retrieval</em><a class="headerlink" href="#information-retrieval" title="Permalink to this headline">¶</a></h1>
+<p>Information retrieval (IR) may be defined as a software program that deals with the organization, storage, retrieval and evaluation of information from document repositories particularly textual information. The system assists users in finding the information they require but it does not explicitly return the answers of the questions. It informs the existence and location of documents that might consist of the required information. The documents that satisfy user’s requirement are called relevant documents. A perfect IR system will retrieve only relevant documents.</p>
+<p>With the help of the following diagram, we can understand the process of information retrieval (IR) −</p>
+<div class="figure align-center">
+<img alt="../_images/relevant_output_about_information.jpg" src="../_images/relevant_output_about_information.jpg" />
+</div>
+<p>It is clear from the above diagram that a user who needs information will have to formulate a request in the form of query in natural language. Then the IR system will respond by retrieving the relevant output, in the form of documents, about the required information.</p>
+<div class="section" id="classical-problem-in-information-retrieval-ir-system">
+<h2><em>Classical Problem in Information Retrieval (IR) System</em><a class="headerlink" href="#classical-problem-in-information-retrieval-ir-system" title="Permalink to this headline">¶</a></h2>
+<p>The main goal of IR research is to develop a model for retrieving information from the repositories of documents. Here, we are going to discuss a classical problem, named ad-hoc retrieval problem, related to the IR system.</p>
+<p>In ad-hoc retrieval, the user must enter a query in natural language that describes the required information. Then the IR system will return the required documents related to the desired information. For example, suppose we are searching something on the Internet and it gives some exact pages that are relevant as per our requirement but there can be some non-relevant pages too. This is due to the ad-hoc retrieval problem.</p>
+</div>
+<div class="section" id="aspects-of-ad-hoc-retrieval">
+<h2><em>Aspects of Ad-hoc Retrieval</em><a class="headerlink" href="#aspects-of-ad-hoc-retrieval" title="Permalink to this headline">¶</a></h2>
+<p>Followings are some aspects of ad-hoc retrieval that are addressed in IR research −</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>How users with the help of relevance feedback can improve original formulation of a query?</p></li>
+<li><p>How to implement database merging, i.e., how results from different text databases can be merged into one result set?</p></li>
+<li><p>How to handle partly corrupted data? Which models are appropriate for the same?</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="information-retrieval-ir-model">
+<h2><em>Information Retrieval (IR) Model</em><a class="headerlink" href="#information-retrieval-ir-model" title="Permalink to this headline">¶</a></h2>
+<p>Mathematically, models are used in many scientific areas having objective to understand some phenomenon in the real world. A model of information retrieval predicts and explains what a user will find in relevance to the given query. IR model is basically a pattern that defines the above-mentioned aspects of retrieval procedure and consists of the following −</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>A model for documents.</p></li>
+<li><p>A model for queries.</p></li>
+<li><p>A matching function that compares queries to documents.</p></li>
+</ul>
+</div></blockquote>
+<p>Mathematically, a retrieval model consists of −</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>D</strong> − Representation for documents.</p></li>
+<li><p><strong>R</strong> − Representation for queries.</p></li>
+<li><p><strong>F</strong> − The modeling framework for D, Q along with relationship between them.</p></li>
+<li><p><strong>R (q,di)</strong> − A similarity function which orders the documents with respect to the query. It is also called ranking.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="types-of-information-retrieval-ir-model">
+<h2><em>Types of Information Retrieval (IR) Model</em><a class="headerlink" href="#types-of-information-retrieval-ir-model" title="Permalink to this headline">¶</a></h2>
+<p>An information model (IR) model can be classified into the following three models −</p>
+<ol class="arabic simple">
+<li><p><strong>Classical IR Model</strong></p></li>
+</ol>
+<p>It is the simplest and easy to implement IR model. This model is based on mathematical knowledge that was easily recognized and understood as well. Boolean, Vector and Probabilistic are the three classical IR models.</p>
+<p>2. <strong>Non-Classical IR Model</strong>
+It is completely opposite to classical IR model. Such kind of IR models are based on principles other than similarity, probability, Boolean operations. Information logic model, situation theory model and interaction models are the examples of non-classical IR model.</p>
+<p>3. <strong>Alternative IR Model</strong>
+It is the enhancement of classical IR model making use of some specific techniques from some other fields. Cluster model, fuzzy model and latent semantic indexing (LSI) models are the example of alternative IR model.</p>
+</div>
+<div class="section" id="design-features-of-information-retrieval-ir-systems">
+<h2><em>Design features of Information retrieval (IR) systems</em><a class="headerlink" href="#design-features-of-information-retrieval-ir-systems" title="Permalink to this headline">¶</a></h2>
+<p>Let us now learn about the design features of IR systems −</p>
+<ul class="simple">
+<li><p><strong>Inverted Index</strong></p></li>
+</ul>
+<p>The primary data structure of most of the IR systems is in the form of inverted index. We can define an inverted index as a data structure that list, for every word, all documents that contain it and frequency of the occurrences in document. It makes it easy to search for ‘hits’ of a query word.</p>
+<ul class="simple">
+<li><p><strong>Stop Word Elimination</strong></p></li>
+</ul>
+<p>Stop words are those high frequency words that are deemed unlikely to be useful for searching. They have less semantic weights. All such kind of words are in a list called stop list. For example, articles “a”, “an”, “the” and prepositions like “in”, “of”, “for”, “at” etc. are the examples of stop words. The size of the inverted index can be significantly reduced by stop list. As per Zipf’s law, a stop list covering a few dozen words reduces the size of inverted index by almost half. On the other hand, sometimes the elimination of stop word may cause elimination of the term that is useful for searching. For example, if we eliminate the alphabet “A” from “Vitamin A” then it would have no significance.</p>
+<ul class="simple">
+<li><p><strong>Stemming</strong></p></li>
+</ul>
+<p>Stemming, the simplified form of morphological analysis, is the heuristic process of extracting the base form of words by chopping off the ends of words. For example, the words laughing, laughs, laughed would be stemmed to the root word laugh.</p>
+<p>In our subsequent sections, we will discuss about some important and useful IR models.</p>
+</div>
+<div class="section" id="the-boolean-model">
+<h2><em>The Boolean Model</em><a class="headerlink" href="#the-boolean-model" title="Permalink to this headline">¶</a></h2>
+<p>It is the oldest information retrieval (IR) model. The model is based on set theory and the Boolean algebra, where documents are sets of terms and queries are Boolean expressions on terms. The Boolean model can be defined as −</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>D</strong> − A set of words, i.e., the indexing terms present in a document. Here, each term is either present (1) or absent (0).</p></li>
+<li><p><strong>Q</strong> − A Boolean expression, where terms are the index terms and operators are logical products − AND, logical sum − OR and logical difference − NOT</p></li>
+<li><p><strong>F</strong> − Boolean algebra over sets of terms as well as over sets of documents</p></li>
+</ul>
+</div></blockquote>
+<p>If we talk about the relevance feedback, then in Boolean IR model the Relevance prediction can be defined as follows −</p>
+<blockquote>
+<div><ul>
+<li><p><strong>R</strong> − A document is predicted as relevant to the query expression if and only if it satisfies the query expression as −</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">((text</span> <span class="pre">˅</span> <span class="pre">information)</span> <span class="pre">^</span> <span class="pre">retrieval</span> <span class="pre">^</span> <span class="pre">~</span> <span class="pre">theory)</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<p>We can explain this model by a query term as an unambiguous definition of a set of documents.</p>
+<p>For example, the query term <strong>“economic”</strong> defines the set of documents that are indexed with the term <strong>“economic”</strong>.</p>
+<p>Now, what would be the result after combining terms with Boolean AND Operator? It will define a document set that is smaller than or equal to the document sets of any of the single terms. <code class="docutils literal notranslate"><span class="pre">For</span> <span class="pre">example</span></code>, the query with terms <strong>“social”</strong> and <strong>“economic”</strong> will produce the documents set of documents that are indexed with both the terms. In other words, document set with the intersection of both the sets.</p>
+<p>Now, what would be the result after combining terms with Boolean OR operator? It will define a document set that is bigger than or equal to the document sets of any of the single terms. For example, the query with terms <strong>“social”</strong> or <strong>“economic”</strong> will produce the documents set of documents that are indexed with either the term <strong>“social”</strong> or <strong>“economic”</strong>. In other words, document set with the union of both the sets.</p>
+</div>
+<div class="section" id="advantages-of-the-boolean-mode">
+<h2><em>Advantages of the Boolean Mode</em><a class="headerlink" href="#advantages-of-the-boolean-mode" title="Permalink to this headline">¶</a></h2>
+<p>The advantages of the Boolean model are as follows −</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The simplest model, which is based on sets.</p></li>
+<li><p>Easy to understand and implement.</p></li>
+<li><p>It only retrieves exact matches</p></li>
+<li><p>It gives the user, a sense of control over the system.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="disadvantages-of-the-boolean-model">
+<h2><em>Disadvantages of the Boolean Model</em><a class="headerlink" href="#disadvantages-of-the-boolean-model" title="Permalink to this headline">¶</a></h2>
+<p>The disadvantages of the Boolean model are as follows −</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The model’s similarity function is Boolean. Hence, there would be no partial matches. This can be annoying for the users.</p></li>
+<li><p>In this model, the Boolean operator usage has much more influence than a critical word.</p></li>
+<li><p>The query language is expressive, but it is complicated too.</p></li>
+<li><p>No ranking for retrieved documents.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="vector-space-model">
+<h2><em>Vector Space Model</em><a class="headerlink" href="#vector-space-model" title="Permalink to this headline">¶</a></h2>
+<p>Due to the above disadvantages of the Boolean model, Gerard Salton and his colleagues suggested a model, which is based on Luhn’s similarity criterion. The similarity criterion formulated by Luhn states, “the more two representations agreed in given elements and their distribution, the higher would be the probability of their representing similar information.”</p>
+<p>Consider the following important points to understand more about the Vector Space Model −</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The index representations (documents) and the queries are considered as vectors embedded in a high dimensional Euclidean space.</p></li>
+<li><p>The similarity measure of a document vector to a query vector is usually the cosine of the angle between them.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="cosine-similarity-measure-formula">
+<h2><em>Cosine Similarity Measure Formula</em><a class="headerlink" href="#cosine-similarity-measure-formula" title="Permalink to this headline">¶</a></h2>
+<p>Cosine is a normalized dot product, which can be calculated with the help of the following formula −</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split} Score \lgroup \vec{d} \vec{q} \rgroup= \frac{\sum_{k=1}^m d_{k}\:.q_{k}}{\sqrt{\sum_{k=1}^m\lgroup d_{k}\rgroup^2}\:.\sqrt{\sum_{k=1}^m}m\lgroup q_{k}\rgroup^2 }\\~\\\end{split}\\\begin{split}Score \lgroup \vec{d} \vec{q}\rgroup =1\:when\:d =q \\~\\\end{split}\\Score \lgroup \vec{d} \vec{q}\rgroup =0\:when\:d\:and\:q\:share\:no\:items\end{aligned}\end{align} \]</div>
+</div>
+<div class="section" id="vector-space-representation-with-query-and-document">
+<h2><em>Vector Space Representation with Query and Document</em><a class="headerlink" href="#vector-space-representation-with-query-and-document" title="Permalink to this headline">¶</a></h2>
+<p>The query and documents are represented by a two-dimensional vector space. The terms are car and insurance. There is one query and three documents in the vector space.</p>
+<div class="figure align-center">
+<img alt="../_images/two_dimensional_vector_space.jpg" src="../_images/two_dimensional_vector_space.jpg" />
+</div>
+<p>The top ranked document in response to the terms car and insurance will be the document d2 because the angle between q and d2 is the smallest. The reason behind this is that both the concepts car and insurance are salient in d2 and hence have the high weights. On the other side, d1 and d3 also mention both the terms but in each case, one of them is not a centrally important term in the document.</p>
+</div>
+<div class="section" id="term-weighting">
+<h2><em>Term Weighting</em><a class="headerlink" href="#term-weighting" title="Permalink to this headline">¶</a></h2>
+<p>Term weighting means the weights on the terms in vector space. Higher the weight of the term, greater would be the impact of the term on cosine. More weights should be assigned to the more important terms in the model. Now the question that arises here is how can we model this.</p>
+<p>One way to do this is to count the words in a document as its term weight. However, do you think it would be effective method?</p>
+<p>Another method, which is more effective, is to use <strong>term frequency (tfij)</strong>, <strong>document frequency (dfi)</strong> and <strong>collection frequency (cfi)</strong>.</p>
+<ul class="simple">
+<li><p><strong>Term Frequency (tfij)</strong></p></li>
+</ul>
+<p>It may be defined as the number of occurrences of wi in dj. The information that is captured by term frequency is how salient a word is within the given document or in other words we can say that the higher the term frequency the more that word is a good description of the content of that document.</p>
+<ul class="simple">
+<li><p><strong>Document Frequency (dfi)</strong></p></li>
+</ul>
+<p>It may be defined as the total number of documents in the collection in which wi occurs. It is an indicator of informativeness. Semantically focused words will occur several times in the document unlike the semantically unfocused words.</p>
+<ul class="simple">
+<li><p><strong>Collection Frequency (cfi)</strong></p></li>
+</ul>
+<p>It may be defined as the total number of occurrences of wi in the collection.</p>
+<p>Mathematically,</p>
+<div class="math notranslate nohighlight">
+\[df_{i}\leq cf_{i}\:and\:\sum_{j}tf_{ij} = cf_{i}\]</div>
+</div>
+<div class="section" id="forms-of-document-frequency-weighting">
+<h2><em>Forms of Document Frequency Weighting</em><a class="headerlink" href="#forms-of-document-frequency-weighting" title="Permalink to this headline">¶</a></h2>
+<p>Let us now learn about the different forms of document frequency weighting. The forms are described below −</p>
+<ul class="simple">
+<li><p><strong>Term Frequency Factor</strong></p></li>
+</ul>
+<p>This is also classified as the term frequency factor, which means that if a term t appears often in a document then a query containing t should retrieve that document. We can combine word’s term frequency (tfij) and document frequency (dfi) into a single weight as follows −</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}weight \left ( i,j \right ) =\begin{cases}(1+log(tf_{ij}))log\frac{N}{df_{i}}\:if\:tf_{i,j}\:\geq1\\0 \:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\: if\:tf_{i,j}\:=0\end{cases}\end{split}\]</div>
+<p>Here N is the total number of documents.</p>
+<ul class="simple">
+<li><p><strong>Inverse Document Frequency (idf)</strong></p></li>
+</ul>
+<p>This is another form of document frequency weighting and often called idf weighting or inverse document frequency weighting. The important point of idf weighting is that the term’s scarcity across the collection is a measure of its importance and importance is inversely proportional to frequency of occurrence.</p>
+<p>Mathematically,</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}idf_{t} = log\left(1+\frac{N}{n_{t}}\right) \\~\\\end{split}\\idf_{t} = log\left(\frac{N-n_{t}}{n_{t}}\right)\end{aligned}\end{align} \]</div>
+<p>Here,</p>
+<p><strong>N</strong> = documents in the collection</p>
+<p><span class="math notranslate nohighlight">\(n_{t}\)</span> = documents containing term t</p>
+</div>
+<div class="section" id="user-query-improvement">
+<h2><em>User Query Improvement</em><a class="headerlink" href="#user-query-improvement" title="Permalink to this headline">¶</a></h2>
+<p>The primary goal of any information retrieval system must be accuracy − to produce relevant documents as per the user’s requirement. However, the question that arises here is how can we improve the output by improving user’s query formation style. Certainly, the output of any IR system is dependent on the user’s query and a well-formatted query will produce more accurate results. The user can improve his/her query with the help of relevance feedback, an important aspect of any IR model.</p>
+<div class="section" id="relevance-feedback">
+<h3><em>Relevance Feedback</em><a class="headerlink" href="#relevance-feedback" title="Permalink to this headline">¶</a></h3>
+<p>Relevance feedback takes the output that is initially returned from the given query. This initial output can be used to gather user information and to know whether that output is relevant to perform a new query or not. The feedbacks can be classified as follows −</p>
+</div>
+<div class="section" id="explicit-feedback">
+<h3><em>Explicit Feedback</em><a class="headerlink" href="#explicit-feedback" title="Permalink to this headline">¶</a></h3>
+<p>It may be defined as the feedback that is obtained from the assessors of relevance. These assessors will also indicate the relevance of a document retrieved from the query. In order to improve query retrieval performance, the relevance feedback information needs to be interpolated with the original query.</p>
+<p>Assessors or other users of the system may indicate the relevance explicitly by using the following relevance systems −</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Binary relevance system</strong> − This relevance feedback system indicates that a document is either relevant (1) or irrelevant (0) for a given query.</p></li>
+<li><p><strong>Graded relevance system</strong> − The graded relevance feedback system indicates the relevance of a document, for a given query, on the basis of grading by using numbers, letters or descriptions. The description can be like “not relevant”, “somewhat relevant”, “very relevant” or “relevant”.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="implicit-feedback">
+<h3><em>Implicit Feedback</em><a class="headerlink" href="#implicit-feedback" title="Permalink to this headline">¶</a></h3>
+<p>It is the feedback that is inferred from user behavior. The behavior includes the duration of time user spent viewing a document, which document is selected for viewing and which is not, page browsing and scrolling actions, etc. One of the best examples of implicit feedback is dwell time, which is a measure of how much time a user spends viewing the page linked to in a search result.</p>
+</div>
+<div class="section" id="pseudo-feedback">
+<h3><em>Pseudo Feedback</em><a class="headerlink" href="#pseudo-feedback" title="Permalink to this headline">¶</a></h3>
+<p>It is also called Blind feedback. It provides a method for automatic local analysis. The manual part of relevance feedback is automated with the help of Pseudo relevance feedback so that the user gets improved retrieval performance without an extended interaction. The main advantage of this feedback system is that it does not require assessors like in explicit relevance feedback system.</p>
+<p>Consider the following steps to implement this feedback −</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Step 1</strong> − First, the result returned by initial query must be taken as relevant result. The range of relevant result must be in top 10-50 results.</p></li>
+<li><p><strong>Step 2</strong> − Now, select the top 20-30 terms from the documents using for instance term frequency(tf)-inverse document frequency(idf) weight.</p></li>
+<li><p><strong>Step 3</strong> − Add these terms to the query and match the returned documents. Then return the most relevant documents.</p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+        </div>
+      </div>
+
+      <div id="side-menu-container">
+
+        <div id="search" role="search">
+        <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+            <input type="text" name="q" placeholder="Search..." />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+        </form>
+</div>
+
+        <div id="side-menu" role="navigation">
+
+          
+  
+    
+  
+  
+    <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="NLP%20Introduction.html"><em>What is NLP?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Components%20of%20NLP.html"><em>Components of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Phases%20of%20NLP.html"><em>Phases of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ambiguity.html"><em>Ambiguity</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linguistic%20Resources.html"><em>Corpus</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Automata%20Theory.html"><em>Automata – What is it?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regular%20Expressions.html"><em>Regular Expressions</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Finite%20State%20Automata.html"><em>Finite State Automata</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Morphology.html"><em>What is Morphology</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Finite%20State%20Transducer.html"><em>Finite State Transducer</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="N-gram.html"><em>An Introduction to N-gram</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Smoothing.html"><em>Smoothing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Morphological%20Parsing.html"><em>Morphological Parsing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="POS%20Tagging.html"><em>Part of Speech(PoS) Tagging</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Semantics.html"><em>Semantic Analysis</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Word%20Sense%20Disambiguation.html"><em>Word Sense Disambiguation</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Discourse%20Processing.html"><em>Discourse Processing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Inception.html"><em>Natural Language Inception</em></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><em>Information Retrieval</em></a></li>
+</ul>
+
+  
+
+
+        </div>
+
+        
+
+      </div>
+
+    </div>
+
+<footer>
+    <div id="footer-info">
+        <ul id="build-details">
+            
+                <li class="footer-element">
+                    
+                        <a href="../_sources/docs/Information Retrieval.rst.txt" rel="nofollow"> source</a>
+                    
+                </li>
+            
+
+            
+
+            
+        </ul>
+        <div id="credit">
+            created with <a href="http://sphinx-doc.org/">Sphinx</a> and <a href="https://github.com/Autophagy/insegel">Insegel</a>
+
+        </div>
+    </div>
+
+    <a id="menu-toggle" class="fa fa-bars" aria-hidden="true"></a>
+
+    <script type="text/javascript">
+      $("#menu-toggle").click(function() {
+        $("#menu-toggle").toggleClass("toggled");
+        $("#side-menu-container").slideToggle(300);
+      });
+    </script>
+
+</footer> 
+
+</div>
+
+</body>
+</html>

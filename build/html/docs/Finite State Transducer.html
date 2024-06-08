@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2D2D2D" />
+  
+  <title>Natural Language Processing and Artificial Neural Networks :: Finite State Transducer</title>
+  
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../_static/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../_static/img/favicon-16x16.png">
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+
+  <link rel="stylesheet" href="../_static/css/insegel.css"/>
+
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'',
+        VERSION:'2021.02',
+        LANGUAGE:'None',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+    };
+  </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/mathjax/tex-chtml.js"></script>
+
+  <script src="https://email.tl.fortawesome.com/c/eJxNjUEOgyAQAF8jR7Kw6wIHDh7sP1Cw2mgxgmn6-3JsMqc5zEQfE8dkxOY1KKMUOI3ACFKRJpSW2AAp7ontYIaxI6i7XPJVwyeVfCQ550Os3jLrGSNOLgbdAy6s0PBk2TFNjEbsfq31LB0OnX407pJa5v2faRadwSW63mn5KuLyR9j2tgx3zecanl-55R_-jjPs"></script>
+
+</head>
+
+<body>
+  <div id="insegel-container">
+    <header>
+      <div id="logo-container">
+          
+          <a href="../index.html"><img src="../_static/img/logo.svg"></a>
+          
+
+      </div>
+      <div id="project-container">
+        <h1>Natural Language Processing and Artificial Neural Networks Documentation</h1>
+      </div>
+    </header>
+
+    <div id="content-container">
+
+      <div id="main-content-container">
+        <div id="main-content-header">
+          <h1><em>Finite State Transducer</em></h1>
+        </div>
+        <div id="main-content">
+          
+  <div class="section" id="finite-state-transducer">
+<h1><em>Finite State Transducer</em><a class="headerlink" href="#finite-state-transducer" title="Permalink to this headline">¶</a></h1>
+<p>A finite-state transducer (FST) is a finite-state machine with two memory tapes, following the terminology for Turing machines: an input tape and an output tape. This contrasts with an ordinary finite-state automaton, which has a single tape. An FST is a type of finite-state automaton that maps between two sets of symbols.[1] An FST is more general than a finite-state automaton (FSA). An FSA defines a formal language by defining a set of accepted strings, while an FST defines relations between sets of strings.</p>
+<p>An FST will read a set of strings on the input tape and generates a set of relations on the output tape. An FST can be thought of as a translator or relater between strings in a set.</p>
+<p>In morphological parsing, an example would be inputting a string of letters into the FST, the FST would then output a string of morphemes.</p>
+<div class="section" id="formal-construction">
+<h2><em>Formal Construction</em><a class="headerlink" href="#formal-construction" title="Permalink to this headline">¶</a></h2>
+<p>Formally, a finite transducer T is a 6-tuple (Q, Σ, Γ, I, F, δ) such that:</p>
+<ul class="simple">
+<li><p>Q is a finite set, the set of states;</p></li>
+<li><p>Σ is a finite set, called the input alphabet;</p></li>
+<li><p>Γ is a finite set, called the output alphabet;</p></li>
+<li><p>I is a subset of Q, the set of initial states;</p></li>
+<li><p>F is a subset of Q, the set of final states; and</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta \subseteq {Q}\times(\sum \cup \epsilon)\times(\tau \cup  \epsilon)\times Q\)</span> (where ε is the empty string) is the transition relation.</p></li>
+</ul>
+<p>We can view (Q, δ) as a labeled directed graph, known as the transition graph of T: the set of vertices is Q, and <span class="math notranslate nohighlight">\((q,a,b,r) \in \delta\)</span> means that there is a labeled edge going from vertex <code class="docutils literal notranslate"><span class="pre">q</span></code> to vertex <code class="docutils literal notranslate"><span class="pre">r</span></code>. We also say that <code class="docutils literal notranslate"><span class="pre">a</span></code> is the <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">label</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> the <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">label</span></code> of that edge.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This definition of finite transducer is also called letter transducer (Roche and Schabes 1997); alternative definitions are possible, but can all be converted into transducers following this one.</p>
+</div>
+<p>Define the <em>extended transition relation</em> <span class="math notranslate nohighlight">\(\delta*\)</span> as the smallest set such that,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\delta \subseteq \delta*\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((q,\epsilon,\epsilon,q) \in \delta* \forall q \in Q\)</span></p></li>
+<li><p>whenever <span class="math notranslate nohighlight">\((q,x,y,r) \in \delta* and (r,a,b,s) \in \delta then (q,xa,yb,s) \in \delta*\)</span>.</p></li>
+</ul>
+<p>The extended transition relation is essentially the reflexive transitive closure of the transition graph that has been augmented to take edge labels into account. The elements of <span class="math notranslate nohighlight">\(\delta*\)</span> are known as paths. The edge labels of a path are obtained by concatenating the edge labels of its constituent transitions in order.</p>
+<p>The behavior of the transducer T is the rational relation [T] defined as follows: x[T]y if and only if there exists <span class="math notranslate nohighlight">\(i \in I\)</span> and <span class="math notranslate nohighlight">\(f \in F\)</span> such that
+<span class="math notranslate nohighlight">\((i,x,y,f) \in \delta*\)</span>. This is to say that T tranduces a string <span class="math notranslate nohighlight">\(x \in \sum*\)</span> into a string <span class="math notranslate nohighlight">\(y \in \tau*\)</span> if there exists a path from an initial state to a final state whose input label is x and whose output label is y.</p>
+<div class="section" id="weighted-automata">
+<h3><em>Weighted Automata</em><a class="headerlink" href="#weighted-automata" title="Permalink to this headline">¶</a></h3>
+<p>Finite State Transducers can be weighted, where each transition is labelled with a weight in addition to the input and output labels. A Weighted Finite State Transducer (WFST) over a set K of weights can be defined similarly to an unweighted one as an 8-tuple T=(Q, Σ, Γ, I, F, E, λ, ρ), where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Q,\sum,\tau,I,F\)</span> are defined as above</p></li>
+<li><p><span class="math notranslate nohighlight">\(E \subseteq Q \times (\sum \cup \epsilon) \times (\tau \cup \epsilon) \times Q \times K\)</span> (where <span class="math notranslate nohighlight">\(\epsilon\)</span> is the empty string) is the finite set of transitions;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda:I \mapsto K\)</span> maps initial states of weights;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho:F \mapsto K\)</span> maps finite states to weights.</p></li>
+</ul>
+<p>In order to make certain operations on WFSTs well-defined, it is convenient to require the set of weights to form a semiring. Two typical semirings used in practice are the log semiring and tropical semiring: nondeterministic automata may be regarded as having weights in the Boolean semiring.</p>
+</div>
+</div>
+</div>
+
+
+        </div>
+      </div>
+
+      <div id="side-menu-container">
+
+        <div id="search" role="search">
+        <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+            <input type="text" name="q" placeholder="Search..." />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+        </form>
+</div>
+
+        <div id="side-menu" role="navigation">
+
+          
+  
+    
+  
+  
+    <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="NLP%20Introduction.html"><em>What is NLP?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Components%20of%20NLP.html"><em>Components of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Phases%20of%20NLP.html"><em>Phases of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ambiguity.html"><em>Ambiguity</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linguistic%20Resources.html"><em>Corpus</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Automata%20Theory.html"><em>Automata – What is it?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regular%20Expressions.html"><em>Regular Expressions</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Finite%20State%20Automata.html"><em>Finite State Automata</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Morphology.html"><em>What is Morphology</em></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><em>Finite State Transducer</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="N-gram.html"><em>An Introduction to N-gram</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Smoothing.html"><em>Smoothing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Morphological%20Parsing.html"><em>Morphological Parsing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="POS%20Tagging.html"><em>Part of Speech(PoS) Tagging</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Semantics.html"><em>Semantic Analysis</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Word%20Sense%20Disambiguation.html"><em>Word Sense Disambiguation</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Discourse%20Processing.html"><em>Discourse Processing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Inception.html"><em>Natural Language Inception</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Information%20Retrieval.html"><em>Information Retrieval</em></a></li>
+</ul>
+
+  
+
+
+        </div>
+
+        
+
+      </div>
+
+    </div>
+
+<footer>
+    <div id="footer-info">
+        <ul id="build-details">
+            
+                <li class="footer-element">
+                    
+                        <a href="../_sources/docs/Finite State Transducer.rst.txt" rel="nofollow"> source</a>
+                    
+                </li>
+            
+
+            
+
+            
+        </ul>
+        <div id="credit">
+            created with <a href="http://sphinx-doc.org/">Sphinx</a> and <a href="https://github.com/Autophagy/insegel">Insegel</a>
+
+        </div>
+    </div>
+
+    <a id="menu-toggle" class="fa fa-bars" aria-hidden="true"></a>
+
+    <script type="text/javascript">
+      $("#menu-toggle").click(function() {
+        $("#menu-toggle").toggleClass("toggled");
+        $("#side-menu-container").slideToggle(300);
+      });
+    </script>
+
+</footer> 
+
+</div>
+
+</body>
+</html>

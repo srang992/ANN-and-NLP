@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2D2D2D" />
+  
+  <title>Natural Language Processing and Artificial Neural Networks :: Discourse Processing</title>
+  
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../_static/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../_static/img/favicon-16x16.png">
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+
+  <link rel="stylesheet" href="../_static/css/insegel.css"/>
+
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'',
+        VERSION:'2021.02',
+        LANGUAGE:'None',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+    };
+  </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/mathjax/tex-chtml.js"></script>
+
+  <script src="https://email.tl.fortawesome.com/c/eJxNjUEOgyAQAF8jR7Kw6wIHDh7sP1Cw2mgxgmn6-3JsMqc5zEQfE8dkxOY1KKMUOI3ACFKRJpSW2AAp7ontYIaxI6i7XPJVwyeVfCQ550Os3jLrGSNOLgbdAy6s0PBk2TFNjEbsfq31LB0OnX407pJa5v2faRadwSW63mn5KuLyR9j2tgx3zecanl-55R_-jjPs"></script>
+
+</head>
+
+<body>
+  <div id="insegel-container">
+    <header>
+      <div id="logo-container">
+          
+          <a href="../index.html"><img src="../_static/img/logo.svg"></a>
+          
+
+      </div>
+      <div id="project-container">
+        <h1>Natural Language Processing and Artificial Neural Networks Documentation</h1>
+      </div>
+    </header>
+
+    <div id="content-container">
+
+      <div id="main-content-container">
+        <div id="main-content-header">
+          <h1><em>Discourse Processing</em></h1>
+        </div>
+        <div id="main-content">
+          
+  <div class="section" id="discourse-processing">
+<h1><em>Discourse Processing</em><a class="headerlink" href="#discourse-processing" title="Permalink to this headline">¶</a></h1>
+<p>The most difficult problem of AI is to process the natural language by computers or in other words natural language processing is the most difficult problem of artificial intelligence. If we talk about the major problems in NLP, then one of the major problems in NLP is discourse processing − building theories and models of how utterances stick together to form coherent discourse. Actually, the language always consists of collocated, structured and coherent groups of sentences rather than isolated and unrelated sentences like movies. These coherent groups of sentences are referred to as discourse.</p>
+<div class="section" id="concept-of-coherence">
+<h2><em>Concept of Coherence</em><a class="headerlink" href="#concept-of-coherence" title="Permalink to this headline">¶</a></h2>
+<p>Coherence and discourse structure are interconnected in many ways. Coherence, along with property of good text, is used to evaluate the output quality of natural language generation system. The question that arises here is what does it mean for a text to be coherent? Suppose we collected one sentence from every page of the newspaper, then will it be a discourse? Of-course, not. It is because these sentences do not exhibit coherence. The coherent discourse must possess the following properties −</p>
+<ul class="simple">
+<li><p><strong>Coherence relation between utterances</strong></p></li>
+</ul>
+<p>The discourse would be coherent if it has meaningful connections between its utterances. This property is called coherence relation. For example, some sort of explanation must be there to justify the connection between utterances.</p>
+<ul class="simple">
+<li><p><strong>Relationship between entities</strong></p></li>
+</ul>
+<p>Another property that makes a discourse coherent is that there must be a certain kind of relationship with the entities. Such kind of coherence is called entity-based coherence.</p>
+</div>
+<div class="section" id="discourse-structure">
+<h2><em>Discourse structure</em><a class="headerlink" href="#discourse-structure" title="Permalink to this headline">¶</a></h2>
+<p>An important question regarding discourse is what kind of structure the discourse must have. The answer to this question depends upon the segmentation we applied on discourse. Discourse segmentations may be defined as determining the types of structures for large discourse. It is quite difficult to implement discourse segmentation, but it is very important for <strong>information retrieval, text summarization and information extraction</strong> kind of applications.</p>
+</div>
+<div class="section" id="algorithms-for-discourse-segmentation">
+<h2><em>Algorithms for Discourse Segmentation</em><a class="headerlink" href="#algorithms-for-discourse-segmentation" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we will learn about the algorithms for discourse segmentation. The algorithms are described below −</p>
+<ul class="simple">
+<li><p><strong>Unsupervised Discourse Segmentation</strong></p></li>
+</ul>
+<p>The class of unsupervised discourse segmentation is often represented as linear segmentation. We can understand the task of linear segmentation with the help of an example. In the example, there is a task of segmenting the text into multi-paragraph units; the units represent the passage of the original text. These algorithms are dependent on cohesion that may be defined as the use of certain linguistic devices to tie the textual units together. On the other hand, lexicon cohesion is the cohesion that is indicated by the relationship between two or more words in two units like the use of synonyms.</p>
+<ul class="simple">
+<li><p><strong>Supervised Discourse Segmentation</strong></p></li>
+</ul>
+<p>The earlier method does not have any hand-labeled segment boundaries. On the other hand, supervised discourse segmentation needs to have boundary-labeled training data. It is very easy to acquire the same. In supervised discourse segmentation, discourse marker or cue words play an important role. Discourse marker or cue word is a word or phrase that functions to signal discourse structure. These discourse markers are domain-specific.</p>
+</div>
+<div class="section" id="text-coherence">
+<h2><em>Text Coherence</em><a class="headerlink" href="#text-coherence" title="Permalink to this headline">¶</a></h2>
+<p>Lexical repetition is a way to find the structure in a discourse, but it does not satisfy the requirement of being coherent discourse. To achieve the coherent discourse, we must focus on coherence relations in specific. As we know that coherence relation defines the possible connection between utterances in a discourse. Hebb has proposed such kind of relations as follows −</p>
+<p>We are taking two terms <code class="docutils literal notranslate"><span class="pre">S0</span></code> and <code class="docutils literal notranslate"><span class="pre">S1</span></code> to represent the meaning of the two related sentences −</p>
+<blockquote>
+<div><p><strong>Result</strong></p>
+</div></blockquote>
+<p>It infers that the state asserted by term <code class="docutils literal notranslate"><span class="pre">S0</span></code> could cause the state asserted by <code class="docutils literal notranslate"><span class="pre">S1</span></code>. For example, two statements show the relationship result: <code class="docutils literal notranslate"><span class="pre">Ram</span> <span class="pre">was</span> <span class="pre">caught</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">fire.</span> <span class="pre">His</span> <span class="pre">skin</span> <span class="pre">burned</span></code>.</p>
+<blockquote>
+<div><p><strong>Explanation</strong></p>
+</div></blockquote>
+<p>It infers that the state asserted by <code class="docutils literal notranslate"><span class="pre">S1</span></code> could cause the state asserted by <code class="docutils literal notranslate"><span class="pre">S0</span></code>. For example, two statements show the relationship − <code class="docutils literal notranslate"><span class="pre">Ram</span> <span class="pre">fought</span> <span class="pre">with</span> <span class="pre">Shyam’s</span> <span class="pre">friend.</span> <span class="pre">He</span> <span class="pre">was</span> <span class="pre">drunk</span></code>.</p>
+<blockquote>
+<div><p><strong>Parallel</strong></p>
+</div></blockquote>
+<p>It infers p(a1,a2,…) from assertion of <code class="docutils literal notranslate"><span class="pre">S0</span></code> and p(b1,b2,…) from assertion <code class="docutils literal notranslate"><span class="pre">S1</span></code>. Here ai and bi are similar for all i. For example, two statements are parallel − <code class="docutils literal notranslate"><span class="pre">Ram</span> <span class="pre">wanted</span> <span class="pre">car.</span> <span class="pre">Shyam</span> <span class="pre">wanted</span> <span class="pre">money</span></code>.</p>
+<blockquote>
+<div><p><strong>Elaboration</strong></p>
+</div></blockquote>
+<p>It infers the same proposition P from both the assertions − <code class="docutils literal notranslate"><span class="pre">S0</span></code> and <code class="docutils literal notranslate"><span class="pre">S1</span></code> For example, two statements show the relation elaboration: <code class="docutils literal notranslate"><span class="pre">Ram</span> <span class="pre">was</span> <span class="pre">from</span> <span class="pre">Chandigarh.</span> <span class="pre">Shyam</span> <span class="pre">was</span> <span class="pre">from</span> <span class="pre">Kerala.</span></code></p>
+<blockquote>
+<div><p><strong>Occasion</strong></p>
+</div></blockquote>
+<p>It happens when a change of state can be inferred from the assertion of <code class="docutils literal notranslate"><span class="pre">S0</span></code>, final state of which can be inferred from <code class="docutils literal notranslate"><span class="pre">S1</span></code> and vice-versa. For example, the two statements show the relation occasion: <code class="docutils literal notranslate"><span class="pre">Ram</span> <span class="pre">picked</span> <span class="pre">up</span> <span class="pre">the</span> <span class="pre">book.</span> <span class="pre">He</span> <span class="pre">gave</span> <span class="pre">it</span> <span class="pre">to</span> <span class="pre">Shyam</span></code>.</p>
+</div>
+<div class="section" id="building-hierarchical-discourse-structure">
+<h2><em>Building Hierarchical Discourse Structure</em><a class="headerlink" href="#building-hierarchical-discourse-structure" title="Permalink to this headline">¶</a></h2>
+<p>The coherence of entire discourse can also be considered by hierarchical structure between coherence relations. For example, the following passage can be represented as hierarchical structure −</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>S1</strong> − Ram went to the bank to deposit money.</p></li>
+<li><p><strong>S2</strong> − He then took a train to Shyam’s cloth shop.</p></li>
+<li><p><strong>S3</strong> − He wanted to buy some clothes.</p></li>
+<li><p><strong>S4</strong> − He do not have new clothes for party.</p></li>
+<li><p><strong>S5</strong> − He also wanted to talk to Shyam regarding his health.</p></li>
+</ul>
+</div></blockquote>
+<div class="figure align-center">
+<img alt="../_images/building_hierarchical_discourse_structure.jpg" src="../_images/building_hierarchical_discourse_structure.jpg" />
+</div>
+</div>
+<div class="section" id="reference-resolution">
+<h2><em>Reference Resolution</em><a class="headerlink" href="#reference-resolution" title="Permalink to this headline">¶</a></h2>
+<p>Interpretation of the sentences from any discourse is another important task and to achieve this we need to know who or what entity is being talked about. Here, interpretation reference is the key element. <strong>Reference</strong> may be defined as the linguistic expression to denote an entity or individual. For example, in the passage, <code class="docutils literal notranslate"><span class="pre">Ram,</span> <span class="pre">the</span> <span class="pre">manager</span> <span class="pre">of</span> <span class="pre">ABC</span> <span class="pre">bank,</span> <span class="pre">saw</span> <span class="pre">his</span> <span class="pre">friend</span> <span class="pre">Shyam</span> <span class="pre">at</span> <span class="pre">a</span> <span class="pre">shop.</span> <span class="pre">He</span> <span class="pre">went</span> <span class="pre">to</span> <span class="pre">meet</span> <span class="pre">him</span></code>, the linguistic expressions like Ram, His, He are reference.</p>
+<p>On the same note, reference resolution may be defined as the task of determining what entities are referred to by which linguistic expression.</p>
+</div>
+<div class="section" id="terminology-used-in-reference-resolution">
+<h2><em>Terminology Used in Reference Resolution</em><a class="headerlink" href="#terminology-used-in-reference-resolution" title="Permalink to this headline">¶</a></h2>
+<p>We use the following terminologies in reference resolution −</p>
+<ol class="arabic simple">
+<li><p><strong>Referring expression</strong> − The natural language expression that is used to perform reference is called a referring expression. For example, the passage used above is a referring expression.</p></li>
+<li><p><strong>Referent</strong> − It is the entity that is referred. For example, in the last given example Ram is a referent.</p></li>
+<li><p><strong>Corefer</strong> − When two expressions are used to refer to the same entity, they are called corefers. For example, Ram and he are corefers.</p></li>
+<li><p><strong>Antecedent</strong> − The term has the license to use another term. For example, Ram is the antecedent of the reference he.</p></li>
+<li><p><strong>Anaphora &amp; Anaphoric</strong> − It may be defined as the reference to an entity that has been previously introduced into the sentence. And, the referring expression is called anaphoric.</p></li>
+<li><p><strong>Discourse model</strong> − The model that contains the representations of the entities that have been referred to in the discourse and the relationship they are engaged in.</p></li>
+</ol>
+</div>
+<div class="section" id="types-of-referring-expressions">
+<h2><em>Types of Referring Expressions</em><a class="headerlink" href="#types-of-referring-expressions" title="Permalink to this headline">¶</a></h2>
+<p>Let us now see the different types of referring expressions. The five types of referring expressions are described below −</p>
+<ul class="simple">
+<li><p><strong>Indefinite Noun Phrases</strong></p></li>
+</ul>
+<p>Such kind of reference represents the entities that are new to the hearer into the discourse context. For example − in the sentence Ram had gone around one day to bring him some food − some is an indefinite reference.</p>
+<ul class="simple">
+<li><p><strong>Definite Noun Phrases</strong></p></li>
+</ul>
+<p>Opposite to above, such kind of reference represents the entities that are not new or identifiable to the hearer into the discourse context. For example, in the sentence - I used to read The Times of India – The Times of India is a definite reference.</p>
+<ul class="simple">
+<li><p><strong>Pronouns</strong></p></li>
+</ul>
+<p>It is a form of definite reference. For example, Ram laughed as loud as he could. The word he represents pronoun referring expression.</p>
+<ul class="simple">
+<li><p><strong>Demonstratives</strong></p></li>
+</ul>
+<p>These demonstrate and behave differently than simple definite pronouns. For example, this and that are demonstrative pronouns.</p>
+<ul class="simple">
+<li><p><strong>Names</strong></p></li>
+</ul>
+<p>It is the simplest type of referring expression. It can be the name of a person, organization and location also. For example, in the above examples, Ram is the name-refereeing expression.</p>
+</div>
+<div class="section" id="reference-resolution-tasks">
+<h2><em>Reference Resolution Tasks</em><a class="headerlink" href="#reference-resolution-tasks" title="Permalink to this headline">¶</a></h2>
+<p>The two reference resolution tasks are described below.</p>
+<ul class="simple">
+<li><p><strong>Coreference Resolution</strong></p></li>
+</ul>
+<p>It is the task of finding referring expressions in a text that refer to the same entity. In simple words, it is the task of finding corefer expressions. A set of coreferring expressions are called coreference chain. For example - He, Chief Manager and His - these are referring expressions in the first passage given as example.</p>
+<ul class="simple">
+<li><p><strong>Constraint on Coreference Resolution</strong></p></li>
+</ul>
+<p>In English, the main problem for coreference resolution is the pronoun it. The reason behind this is that the pronoun it has many uses. For example, it can refer much like he and she. The pronoun it also refers to the things that do not refer to specific things. For example, It’s raining. It is really good.</p>
+<ul class="simple">
+<li><p><strong>Pronominal Anaphora Resolution</strong></p></li>
+</ul>
+<p>Unlike the coreference resolution, pronominal anaphora resolution may be defined as the task of finding the antecedent for a single pronoun. For example, the pronoun is his and the task of pronominal anaphora resolution is to find the word Ram because Ram is the antecedent.</p>
+</div>
+</div>
+
+
+        </div>
+      </div>
+
+      <div id="side-menu-container">
+
+        <div id="search" role="search">
+        <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+            <input type="text" name="q" placeholder="Search..." />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+        </form>
+</div>
+
+        <div id="side-menu" role="navigation">
+
+          
+  
+    
+  
+  
+    <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="NLP%20Introduction.html"><em>What is NLP?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Components%20of%20NLP.html"><em>Components of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Phases%20of%20NLP.html"><em>Phases of NLP</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ambiguity.html"><em>Ambiguity</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linguistic%20Resources.html"><em>Corpus</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Automata%20Theory.html"><em>Automata – What is it?</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regular%20Expressions.html"><em>Regular Expressions</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Finite%20State%20Automata.html"><em>Finite State Automata</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Morphology.html"><em>What is Morphology</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Finite%20State%20Transducer.html"><em>Finite State Transducer</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="N-gram.html"><em>An Introduction to N-gram</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Smoothing.html"><em>Smoothing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Morphological%20Parsing.html"><em>Morphological Parsing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="POS%20Tagging.html"><em>Part of Speech(PoS) Tagging</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Semantics.html"><em>Semantic Analysis</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Word%20Sense%20Disambiguation.html"><em>Word Sense Disambiguation</em></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><em>Discourse Processing</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Inception.html"><em>Natural Language Inception</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Information%20Retrieval.html"><em>Information Retrieval</em></a></li>
+</ul>
+
+  
+
+
+        </div>
+
+        
+
+      </div>
+
+    </div>
+
+<footer>
+    <div id="footer-info">
+        <ul id="build-details">
+            
+                <li class="footer-element">
+                    
+                        <a href="../_sources/docs/Discourse Processing.rst.txt" rel="nofollow"> source</a>
+                    
+                </li>
+            
+
+            
+
+            
+        </ul>
+        <div id="credit">
+            created with <a href="http://sphinx-doc.org/">Sphinx</a> and <a href="https://github.com/Autophagy/insegel">Insegel</a>
+
+        </div>
+    </div>
+
+    <a id="menu-toggle" class="fa fa-bars" aria-hidden="true"></a>
+
+    <script type="text/javascript">
+      $("#menu-toggle").click(function() {
+        $("#menu-toggle").toggleClass("toggled");
+        $("#side-menu-container").slideToggle(300);
+      });
+    </script>
+
+</footer> 
+
+</div>
+
+</body>
+</html>
